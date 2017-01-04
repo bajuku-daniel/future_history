@@ -4,9 +4,8 @@
  * template.php
  */
 
-
 // overrides the default "my account" link with avatar and name
-function future_history_menu_link(array $variables) { 
+function future_history_menu_link(array $variables) {
   global $user;
   $element = $variables['element'];
   $sub_menu = '';
@@ -31,7 +30,7 @@ function future_history_menu_link(array $variables) {
     $element['#localized_options']['attributes']['data-toggle'] = 'dropdown';
     // manually prepare picture, <a> tag with image reference, username (theme_user_picture won't work due to nested <a> tag)
     if (!empty($user->picture)) {
-      $fid = $user->picture; 
+      $fid = $user->picture;
       $file = file_load($fid);
       $title = theme('image_style', array('style_name' => 'fh-avatar-menu', 'path' => $file->uri, 'alt' => $element['#title'], 'title' => $element['#title'])) . '<div class="link-text">' . $caret_text .  $element['#title'] . '</div>' ;
     }
@@ -39,20 +38,20 @@ function future_history_menu_link(array $variables) {
       // set the default user picture under public://pictures/default.jpg
       $title = theme('image_style', array('style_name' => 'fh-avatar-menu', 'path' => 'public://pictures/default.jpg', 'alt' => $element['#title'], 'title' => $element['#title'])) . '<div class="link-text">' . $caret_text .  $element['#title'] . '</div>' ;
     }
-  } 
+  }
   else {
     $title = $element['#title'];
   }
   $output = l($title, $element['#href'], $element['#localized_options']);
-  
+
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
 // Hide the "status" filter input box if no entwurf is in
 function future_history_preprocess_views_exposed_form(&$variables) {
-  $options = $variables['form']['status_selective']['#options'];
+  $options = isset($variables['form']['status_selective']['#options']) ? $variables['form']['status_selective']['#options'] : '';
   if ($variables['form']['#id'] == 'views-exposed-form-meine-ansichten-page-1') {
-    if (!in_array('Entwurf', $options)) { 
+    if (!in_array('Entwurf', $options)) {
       unset($variables['widgets']['filter-status_selective']);
     }
   }
@@ -77,11 +76,8 @@ function future_history_preprocess_page(&$variables) {
       $variables['user_picture'] = theme('image_style', array('style_name' => 'profile_avatar', 'path' => 'public://pictures/default.jpg', 'alt' => 'user picture', 'title' => 'user picture'));
     }
   }
-
-  dsm($variables);
 }*/
 
 function future_history_preprocess_node(&$variables) {
-  
   $variables['messages'] = theme('status_messages');
 }

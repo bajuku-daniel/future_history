@@ -1,5 +1,5 @@
 /**
-* Initial Sets 
+* Initial Sets
 */
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -22,7 +22,7 @@ a:hover {
 }
 
 /**
-* Add ansicht tabs style 
+* Add ansicht tabs style
 */
 
 div.vertical-tabs .vertical-tab-button strong{
@@ -34,11 +34,11 @@ div.vertical-tabs .vertical-tab-button strong{
 }
 
 /**
-* User Area Grid view and Profile 
+* User Area Grid view and Profile
 */
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Source Sans Pro', sans-serif;  
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 h4 {
@@ -48,6 +48,131 @@ h4 {
   margin-top: 30px;
 }
 
+
+
+/* Styles for the flag_lists Touren View*/
+
+#edit-data-table .panel-heading {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #954e94;
+    padding:0px;
+    margin-bottom:20px;
+}
+#edit-data-table {
+    border-color: #ffffff;
+    margin-top:50px;
+}
+
+#edit-data-table thead tr{
+  height:30px;
+}
+#edit-data-table td {
+vertical-align: middle;
+}
+#edit-data-table td.entry-cross{
+  vertical-align:top;
+}
+
+#edit-data-table tr {
+  height:130px;
+}
+
+#edit-data-table .tabledrag-toggle-weight-wrapper {
+  display:none;
+}
+/**
+ * TableDrag behavior.
+ *
+ * @see tabledrag.js
+ */
+body.drag {
+  cursor: move;
+}
+
+#entry-order  td,  th {
+    background-color: #ffffff;
+}
+
+#entry-order .draggable a.tabledrag-handle {
+  cursor: move;
+  float: left; /* LTR */
+  height: 1.7em;
+  margin-left: -1em; /* LTR */
+  overflow: hidden;
+  text-decoration: none;
+  cursor: move;
+  height: 100px;
+  position: absolute;
+  width: 95%;
+}
+#entry-order a.tabledrag-handle:hover {
+  text-decoration: none;
+}
+#entry-order a.tabledrag-handle .handle {
+    height: 25px;
+    margin: 45px 20px;
+    padding: 0px;
+    width: 20px;
+}
+#entry-order a.tabledrag-handle-hover .handle {
+  background-position: 6px 9px;
+}
+#entry-order div.indentation {
+  float: left; /* LTR */
+  height: 1.7em;
+  margin: -0.4em 0.2em -0.4em -0.4em; /* LTR */
+  padding: 0.42em 0 0.42em 0.6em; /* LTR */
+  width: 20px;
+}
+#entry-order div.tree-child {
+  background: url(../../misc/tree.png) no-repeat 11px center; /* LTR */
+}
+#entry-order div.tree-child-last {
+  background: url(../../misc/tree-bottom.png) no-repeat 11px center; /* LTR */
+}
+#entry-order div.tree-child-horizontal {
+  background: url(../../misc/tree.png) no-repeat -11px center;
+}
+#entry-order .tabledrag-toggle-weight-wrapper {
+  text-align: right; /* LTR */
+}
+
+
+
+
+
+.view-id-meine_touren li {
+  float:left;
+  margin:20px;
+  width:300px;
+  height:470px;
+  list-style:none;
+}
+
+.view-id-meine_touren .views-field-field-bild {
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.view-id-meine_touren .views-field-description {
+  margin-bottom:10px;
+
+}
+
+.view-id-flag_lists_user_list li {
+  float:left;
+  margin:20px;
+  list-style:none;
+}
+
+.view-id-flag_lists_user_list .views-field-title {
+  float:left;
+  margin-right:5px;
+  margin-bottom:10px;
+}
+
+/* Styles for the Sammlungen View*/
 .container-ansichten {
   padding-left:35px;
 }
@@ -56,6 +181,7 @@ h4 {
   margin-top:50px;
   margin-bottom:50px;
 }
+
 
 .view-meine-ansichten li, .view-flag-bookmarks li {
   float:left;
@@ -67,13 +193,13 @@ h4 {
 }
 
 /**
-* Fill main container 100% 
+* Fill main container 100%
 */
 html, body {
   height: 100%;
   margin: 0px;
 }
-.fill { 
+.fill {
   min-height: 100%;
 }
 
@@ -86,7 +212,7 @@ html, body {
 }
 
 /**
-* Navigation top Settings 
+* Navigation top Settings
 */
 .navbar {
   background-color:rgba(255, 255, 255, 0.84);
@@ -128,7 +254,7 @@ ul.navbar-nav {
 }
 
 /**
-* Front Page top Settings 
+* Front Page top Settings
 */
 .main {
   background-color:rgba(118, 118, 118, 0.40);
@@ -177,7 +303,7 @@ ul.navbar-nav {
 
 
 /**
-* Kill Round corners... 
+* Kill Round corners...
 */
 .well, .breadcrumb {
   border-radius:0px;
@@ -186,7 +312,7 @@ ul.navbar-nav {
 
 
 /**
-* form error settings... 
+* form error settings...
 */
 div.error {
     background: none!important;
@@ -194,20 +320,20 @@ div.error {
 }
 
 /**
-* fix the drag and drop image form... 
+* fix the drag and drop image form...
 */
 div.image-preview {
     float: none;
 }
 
 /**
-* Ansicht Page settings... 
+* Ansicht Page settings...
 */
 .ansicht-audio, .ansicht-collections, .ansicht-comment, .ansicht-share, .ansicht-info, .ansicht-back-to-map {
   margin-top:10px;
 }
 .ansicht-collections {
-  width:217px;
+  width:150px;
 }
 .ansicht-comment {
   width:150px;
@@ -220,8 +346,8 @@ div.image-preview {
 
 .ansicht-collections ul, .ansicht-collections a.ansicht-collection-button-message {
   padding-left:30px;
-  cursor: hand; 
-  cursor: pointer;   
+  cursor: hand;
+  cursor: pointer;
 }
 
 .ansicht-audio i,  .ansicht-comment i, .ansicht-share i, .ansicht-info i, .ansicht-back-to-map i {
@@ -236,8 +362,8 @@ div.image-preview {
 
 .ansicht-audio a, .ansicht-comment a, .ansicht-share a, .ansicht-info a,  .ansicht-back-to-map a, .ansicht-audio span {
   color:#ffffff;
-  cursor: pointer; 
-  cursor: hand; 
+  cursor: pointer;
+  cursor: hand;
   padding-left:30px;
 }
 
@@ -263,7 +389,7 @@ audio , .addthis_inline_share_toolbox {
   margin-right: 20px;
 }
 
-.audio-close i {  
+.audio-close i {
   cursor:pointer;
   cursor:hand;
   font-size:30px;
@@ -287,20 +413,20 @@ audio , .addthis_inline_share_toolbox {
   padding-top: 14px;
 }
 
-#collection-modal a{
+#login-modal a{
   color:#1758a1;
 }
 
-#collection-modal .modal-footer {
+#login-modal .modal-footer {
   padding-top:0px;
   border:none;
 }
 
-#collection-modal .modal-body {
+#login-modal .modal-body {
   padding-bottom:0px;
 }
 
-#collection-modal.modal {
+#login-modal .modal {
   top:40%;
 }
 
@@ -361,6 +487,37 @@ audio , .addthis_inline_share_toolbox {
   margin-top:30px;
 }
 
+/* Style the "add-to-modal" (bild detail screen)*/
+.add-to-modal-link {
+  margin-left:40px;
+}
+
+#add-to-modal a {
+  color: rgba(23, 88, 161, 1);
+}
+.ansicht-collections #add-to-modal i {
+  color: rgba(23, 88, 161, 1);
+}
+#add-to-modal .add-to-tour-list ul {
+  padding-left:0px;
+}
+#add-to-modal .add-to-tour-list ul li {
+  background-image: url("../img/icon_tour.svg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 30px auto;
+  list-style: outside none none;
+  margin-top:20px;
+  cursor: default;
+}
+#add-to-modal .add-to-tour-list ul li a{
+  margin-left:40px;
+}
+
+#add-to-modal .flag-message {
+  margin-left:40px;
+  width:450px;
+}
 
 /* kill some useless comment features */
 .comment-wrapper .comment_forbidden {
@@ -400,7 +557,7 @@ li.blog_usernames_blog {
 }
 
 /**
-* overview slider settings... 
+* overview slider settings...
 */
 .futurehistory-single-image img {
   max-width:100%;
@@ -413,23 +570,19 @@ li.blog_usernames_blog {
 
 
 /**
-* Footer Settings 
+* Footer Settings
 */
 
 .footer-start {
-  background-image: url("/sites/all/themes/future_history/img/footer-bg.png");
-  background-position: center center;
-  background-repeat: repeat-y;
-  background-size: 100% auto;
-  /*background-color:rgba(255, 255, 255, 0.84);*/
+  background-color:rgba(255, 255, 255, 0.84);
   margin-top:0px;
   padding-bottom: 5px;
   padding-top: 25px;
   height:100px;
-  color:#ffffff;
+  color:#000000;
 }
 .footer-start a {
-  color:#ffffff;
+  color:#000000;
 }
 .footer-start h2 {
   color:#ffffff;
@@ -465,7 +618,7 @@ li.blog_usernames_blog {
   padding-bottom: 5px;
   padding-top: 25px;
   height:100px;
-  color:#ffffff;  
+  color:#ffffff;
 }
 .footer a {
   color:#ffffff;
@@ -478,11 +631,20 @@ li.blog_usernames_blog {
 
 
 /**
-*  style the user menu in TOP Navigation  
+*  style the user menu in TOP Navigation
 */
 
 .fh-nav-user-picture {
   margin-left:30px;
+}
+
+.fh-nav-user-picture li:{
+  margin-left:30px;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: #ffffff;
+    color: #717171;
 }
 
 .fh-nav-user-picture span.fh-user {
@@ -526,7 +688,7 @@ li.blog_usernames_blog {
 }
 
 /**
-*  hide some fields 
+*  hide some fields
 */
 .form-item-field-stadt-und, #futurehistory-dist-slider-53-0, #edit-field-position-der-aufnahme-und-0-distitem {
   display:none;
@@ -535,291 +697,3 @@ li.blog_usernames_blog {
 #edit-field-bild-und-0-upload-button, #edit-field-bild-overlay-und-0-upload-button, #edit-field-audio-datei-und-0-upload-button{
   display:none;
 }
-
-
-
-
-/*######### Claus Seiberth Startseitenformatierung Anfang ##################################################################*/
-
-
-/* Rand rechts --- Problem  gelöst */
-.front  .col-sm-12 {padding-right: 0px; min-height: 0px;}
-.front .start_content {padding-bottom: 0px;}
-.front .field-collection-container {margin-bottom: 0px;}
-.front .row {margin-right: 0px !important;}
-.front .container {padding-right: 0px !important;}
-.front .container > .navbar-header, .container > .navbar-collapse {margin-right: 0px; margin-left: 0px;}
-/* ################################### */
-
-
-
-
-/*####### Topbar Scroll-Animation größer/kleiner Anfang ######################################################################## */
-
-.front .navbar {
-  position: fixed;
-  height: 100px;
-  width: 100%;
-  background-color:rgba(255, 255, 255, 0.9);
-  margin-bottom:0px;
-  -webkit-transition: all 0.4s ease !important;
-  transition: all 0.4s ease !important;
-}
-.front .logo {
-	height: 83px;
-	-webkit-transition: all 0.4s ease !important;
-	transition: all 0.4s ease !important;
-}
-.navbar-small { height: 80px !important;}
-.logo-small { height: 60px !important;}
-
-/*####### Topbar Scroll-Animation größer/kleiner Ende ######################################################################## */
-
-
-/*####### Startseite Button "Ich möchte mehr erfahren" Anfang ######################################################################## */
-
-.startseite-button-oben {
-	position: absolute;
-	margin: 0 auto;
-	width: 100%;
-	z-index: 12;
-	text-align: center;
-	margin-top: -25%;	
-}
-
-.startseite-button-oben a {
-	text-decoration: none;
-	font-size: 22px;
-    color: #ffffff;
-    padding: 10px;
-    background-color: rgba(102,102,102,0.7);
-    text-transform: none;
-    font-weight: 300;
-    border-radius: 5px;
-}
-
-.startseite-button-oben a:hover {
-	text-decoration: none;
-    background-color: rgba(102,102,102,0.7);
-}
-/*####### Startseite Button "Ich möchte mehr erfahren" Ende ######################################################################## */
-
-
-
-
-
-/*####### Startseite Slider Anfang ######################################################################## */
-
-.flexslider {margin-bottom: 20px;}
-
-#block-views-big-slider-block .flexslider, .field-name-field-content-slide .flexslider {
-    margin-bottom: 0px;
-    background: transparent;
-    border: 0px solid #fff;
-} 
-
-.field-name-field-content-slide .field-item img {
-	border: 1px solid #e8e8e8;
-}
-
-.slide_caption {display: none;}
-
-.slider-headline {
-	position: absolute;
-	margin: 0 auto;
-	width: 100%;
-	z-index: 14;
-	margin-top: -43%;
-	border: 0px solid red;
-	text-align: center;
-}
-
-.slider-headline-text {
-	margin: 0 auto;
-	width: 100%;
-	color: #ffffff;
-	/*font-size: 3vw;*/
-	font-size: 40px;
-	text-align: center;
-	padding-top: 5px;
-	padding-bottom: 10px;
-	line-height: 1.1;
-}
-
-#block-views-big-slider-block {height: auto; overflow: hidden;}
-
-#block-views-big-slider-block .flexslider {margin-bottom: 0px;}
-
-.field-name-field-content-slide-1-text p,
-.field-name-field-content-slide-2-text p,
-.field-name-field-content-slide-3-text p {text-align: left;}
-
-/*####### Startseite Slider Ende ######################################################################## */
-
-
-
-/*####### Allgemeine Formatierungen Anfang ######################################################################## */
-
-.navbar a {
-	font-size: 16px;
-	font-weight: 400;
-}
-
-a.anchor {
-    display: block;
-    position: relative;
-    top: -80px;
-    visibility: hidden;
-}
-
-.front .container {
-	position: relative;
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-#block-futurehistory-googleplaces-places-startseite {
-	position: absolute;
-	margin: 0 auto;
-	width: 100%;
-	z-index: 99;
-	margin-top: -20%;
-}
-
-.field-collection-container {border-bottom: none;margin-bottom: 1em;}
-
-.main {
-	position: relative;
-	margin-top: 0px;
-    padding-top: 0px;
-	background-color: #ffffff !important;
-}
-
-/*####### Allgemeine Formatierungen Anfang ######################################################################## */
-
-
-/*####### Die Hintergrundfarbe eines Content-Elements wird zwar dargestellt und mit PHP gesucht, ist aber unsichtbar ##### */
-.field-collection-view .field-name-field-backcolor-content-element {visibility: hidden;}
-
-
-/*####### Das modale Dialogfenster wenn man nicht eingeloggt ist ###################### */
-.user-login-message {cursor: pointer;}
-#user-login-modal {text-align: left; top: 40%;}
-#user-login-modal .modal-body {padding-bottom: 0px;}
-#user-login-modal .modal-footer {padding-top: 0px; border: none;}
-
-
-
-
-
-
-
-/*####### Responsive Anfang ######################################################################## */
-
-
-
-@media (max-width: 767px) {	
-	.container > .navbar-collapse {
-		position: relative;
-		z-index: 999;
-	    max-height: 340px;
-	    padding-right: 15px;
-	    padding-left: 25px;
-	    overflow-x: hidden;
-	    border-top: 1px solid transparent;
-	    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-	    -webkit-overflow-scrolling: touch;
-	    background-color: rgba(255, 255, 255, 0.9);
-	    margin-left: 0px;
-	}
-	
-	.startseite-button-oben {display: none;}
-	
-	#block-futurehistory-googleplaces-places-startseite {
-		position: relative;
-		margin-top: 0px;
-		}		
-		
-		.content .field-name-field-content-headline {
-			font-size: 35px;
-			line-height: 1.07885em;
-			font-weight: 200;
-		}
-
-		.field-name-field-content-headline strong {
-				font-size: 28px;
-				font-weight: 400;
-		}
-		
-		.navbar a {
-			font-size: 18px;
-			font-weight: 400;
-		}
-		
-	.front .navbar-btn {margin-bottom: 0px;}	
-	.front .navbar-toggle {margin-bottom: 0px;}
-	
-	.front .navbar {
-		position: relative;
-		height: 70px;
-		margin-bottom: 5px;
-		}
-		
-	.front	.navbar-default {border: none;}
-	.front .logo {height: 60px;}
-	#block-views-big-slider-block {width: 100%;}
-	.places_box_startseite {padding-top: 0px !important;}
-	.places_box_startseite_button {width: 100%;}	
-	#block-futurehistory-googleplaces-places-startseite .places_box_startseite .search_wrapper {width: 100%;}
-		
-}
-@media (max-width: 991px) {	
-	.startseite-button-oben {display: none;}
-	#block-futurehistory-googleplaces-places-startseite {margin-top: -25%;}
-}
-
-@media (max-width: 550px) {
-	.slider-headline-text {font-size: 180%;}
-	
-	#block-futurehistory-googleplaces-places-startseite {
-		position: relative;
-		margin-top: 0px;
-		}
-		
-}
-
-
-
-@media (min-width: 768px) {	
-	.places_box_startseite .col-sm-offset-3 {margin-left: 29%;}	
-	.places_box_startseite .col-sm-7 {width: 50%;}
-}
-@media (min-width: 992px) {	
-	.places_box_startseite .col-sm-offset-3 {margin-left: 18%;}	
-	.places_box_startseite .col-md-6  {margin-left: 0%;}	
-	.places_box_startseite .col-sm-7 {width: 33.3333%;}	
-}
-/*####### Responsive Ende ######################################################################## */
-
-
-/*####### Typographie Anfang ######################################################################## */
-.field-name-field-content-headline .field-item p {line-height: 1.1;}
-/*####### Typographie Ende ######################################################################## */
-
-
-
-
-/*######### Claus Seiberth Startseitenformatierung Ende #########################################################################*/
-
-
-
-
-
-
-
-
-
-
-
