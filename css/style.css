@@ -830,15 +830,20 @@ a.anchor {
 */
 
 .footer-start {
-  background-color:rgba(255, 255, 255, 0.84);
+
+  background-image: url("/sites/all/themes/future_history/img/footer-bg.png");
+  background-position: center center;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  /*background-color:rgba(255, 255, 255, 0.84);*/
   margin-top:0px;
   padding-bottom: 5px;
   padding-top: 25px;
   height:100px;
-  color:#000000;
+  color:#ffffff;
 }
 .footer-start a {
-  color:#000000;
+  color:#ffffff;
 }
 .footer-start h2 {
   color:#ffffff;
