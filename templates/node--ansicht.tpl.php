@@ -126,7 +126,7 @@
         <div class="col-md-10 col-md-offset-1">
           <?php print render($title_prefix); ?>
           <?php if (!empty($title)): ?>
-            <h1><?php print $title; ?> | <?php if($content['field_genauigkeit']['0']['#markup'] == 'ungefähr') {print('um '); } print($content['field_jahr']['0']['#markup']);?></h1>
+            <h1><?php print $title; ?> | <?php if(isset($content['field_genauigkeit']) && ($content['field_genauigkeit']['0']['#markup'] == 'ungefähr')) {print('um '); } print($content['field_jahr']['0']['#markup']);?></h1>
           <?php endif; ?>
           <?php if (!empty($content['field_teaser_kurzetext'])): ?>
             <h3><?php  print render($content['field_teaser_kurzetext']);  ?></h3>
