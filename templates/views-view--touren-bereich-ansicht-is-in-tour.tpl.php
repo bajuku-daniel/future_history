@@ -1,7 +1,4 @@
 <?php
-
-
-
 /**
  * @file
  * Main view template.
@@ -28,38 +25,6 @@
  *
  * @ingroup views_templates
  */
+ print $rows;
+ //print $rows;
 ?>
-
-<div class="container container-ansichten">
-  <div class="row">
-
-    <h4> <?php print(t('Eigene Bilder')); ?>  </h4>
-    <?php if ($exposed): ?>
-      <div class="view-exposed">
-        <?php print $exposed; ?>
-      </div>
-    <?php endif; ?>
-    <?php if (isset($empty)): ?>
-      <div class="view-empty">
-        <?php print $empty; ?>
-      </div>
-    <?php endif; ?>
-
-
-  </div>
-</div>
-
-<div class="container-fluid">
-<div class="row-fluid">
-  <div class="col-sm-12">
-  <div class="<?php print $classes; ?>">
-    <?php if ($rows): ?>
-      <div class="view-content">
-        <?php print $rows; ?>
-      </div>
-    <?php endif; ?>
-  </div><?php /* class view */ ?>
-</div>
-</div>
-
-</div>

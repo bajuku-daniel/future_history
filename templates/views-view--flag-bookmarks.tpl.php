@@ -39,7 +39,7 @@
         <?php print $exposed; ?>
       </div>
     <?php endif; ?>
-    <?php if ($empty): ?>
+    <?php if (isset($empty)): ?>
       <div class="view-empty">
         <?php print $empty; ?>
       </div>
@@ -55,7 +55,8 @@
   <div class="<?php print $classes; ?>">
     <?php if ($rows): ?>
       <div class="view-content">
-        <?php print $rows; ?>
+        <?php print $rows;
+        ?>
       </div>
     <?php endif; ?>
   </div><?php /* class view */ ?>
@@ -63,5 +64,3 @@
 </div>
 
 </div>
-
-
