@@ -1,0 +1,153 @@
+
+
+#content_element_content_area {position: relative; max-width: 1140px;}
+
+
+.content .field-name-field-content-element {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	/* background-color: #1357a0 !important; */
+}
+
+.content .field-collection-view {
+    padding: 0px;
+    margin:0px;
+    border-bottom: 0px;
+}
+
+
+.content .field-name-field-content-headline {
+	font-size: 50px;
+	line-height: 1.07885em;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 30px;
+	font-weight: 200;
+}
+
+.field-name-field-content-headline strong {
+		font-size: 40px;
+		font-weight: 300;
+}
+
+
+
+
+.content .field-name-field-content-textfield {
+	font-size: 18px;
+	text-align: left;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	font-weight: 300;
+}
+
+.field-name-field-content-slide img {
+	max-width: 100%;
+	height: auto;
+}
+
+.content .field-name-field-content-slide-1-headline,
+.content .field-name-field-content-slide-2-headline,
+.content .field-name-field-content-slide-3-headline {
+	font-size: 25px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.content .field-name-field-content-slide-1-text,
+.content .field-name-field-content-slide-2-text,
+.content .field-name-field-content-slide-3-text {
+	font-size: 16px;
+	padding-bottom: 30px;
+	font-weight: 300;
+}
+
+.content .field-name-field-content-slide-image-text {
+	font-size: 20px;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+.content .field-name-field-content-slide-image-text a {text-decoration: none !important;}
+
+
+#content_element_wrapper_blue {
+	color: #ffffff;
+	background-color: #1357a0;
+	padding-left: 20px;
+	padding-right: 20px;	
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+#content_element_wrapper_blue a, #content_element_wrapper_blue a:hover {color: #ffffff; text-decoration: underline;}
+
+
+#content_element_wrapper_white {
+	color: #666666;
+	background-color: #ffffff;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-bottom: 1px solid #e8e8e8;
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+#content_element_wrapper_white a, #content_element_wrapper_white a:hover {color: #666666; text-decoration: underline;}
+
+
+
+
+
+
+
+
+/* #content_element_wrapper_white .field-name-field-content-textfield,
+#content_element_wrapper_white .field-name-field-content-headline,
+#content_element_wrapper_white .field-name-field-content-slide-1-headline,
+#content_element_wrapper_white .field-name-field-content-slide-2-headline,
+#content_element_wrapper_white .field-name-field-content-slide-3-headline,
+#content_element_wrapper_white .field-name-field-content-slide-1-text,
+#content_element_wrapper_white .field-name-field-content-slide-2-text,
+#content_element_wrapper_white .field-name-field-content-slide-3-text,
+#content_element_wrapper_white .field-name-field-content-slide-image-text {color: #666666 !important;}
+
+
+
+
+.field-name-field-content-slide-image-text a,
+.field-name-field-content-slide-image-text a:hover;
+.field-name-field-content-slide-1-headline a,
+.field-name-field-content-slide-2-headline a,
+.field-name-field-content-slide-3-headline a,
+.field-name-field-content-slide-1-headline a:hover,
+.field-name-field-content-slide-2-headline a:hover,
+.field-name-field-content-slide-3-headline a:hover {text-decoration: underline; color: #ffffff;}
+
+#content_element_wrapper_white .field-name-field-content-slide-image-text a,
+#content_element_wrapper_white .field-name-field-content-slide-image-text a:hover;
+#content_element_wrapper_white .field-name-field-content-textfield a,
+#content_element_wrapper_white .field-name-field-content-slide-1-text a,
+#content_element_wrapper_white .field-name-field-content-slide-2-text a,
+#content_element_wrapper_white .field-name-field-content-slide-3-text a,
+#content_element_wrapper_white .field-name-field-content-slide-1-headline a,
+#content_element_wrapper_white .field-name-field-content-slide-2-headline a,
+#content_element_wrapper_white .field-name-field-content-slide-3-headline a,
+#content_element_wrapper_white .field-name-field-content-slide-1-headline a:hover,
+#content_element_wrapper_white .field-name-field-content-slide-2-headline a:hover,
+#content_element_wrapper_white .field-name-field-content-slide-3-headline a:hover {text-decoration: underline; color: #666666;} */
+
+
+
+
+
+
+
+
+
+

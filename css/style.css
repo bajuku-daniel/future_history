@@ -1,0 +1,825 @@
+/**
+* Initial Sets 
+*/
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color:#717171;
+  font-size:14px;
+}
+a {
+  color:#1357a0;
+}
+a:hover {
+  color:#a8047d;
+}
+.main-container {
+  padding-top:20px;
+  padding-bottom:20px;
+
+}
+.translation-link {
+ display:none;
+}
+
+/**
+* Add ansicht tabs style 
+*/
+
+div.vertical-tabs .vertical-tab-button strong{
+  font-weight:normal;
+}
+
+.form-required {
+  color:#b94a48;
+}
+
+/**
+* User Area Grid view and Profile 
+*/
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Source Sans Pro', sans-serif;  
+}
+
+h4 {
+  text-transform: uppercase;
+  color: #954e94;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.container-ansichten {
+  padding-left:35px;
+}
+
+.container-ansichten  .view-empty {
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+.view-meine-ansichten li, .view-flag-bookmarks li {
+  float:left;
+  margin:20px;
+  list-style:none;
+}
+.views-field-status {
+  display:none;
+}
+
+/**
+* Fill main container 100% 
+*/
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+.fill { 
+  min-height: 100%;
+}
+
+#block-views-exp-first-map-page-1 {
+  margin: 0 auto;
+  width: 700px;
+}
+.start_content {
+ padding-bottom: 40px;
+}
+
+/**
+* Navigation top Settings 
+*/
+.navbar {
+  background-color:rgba(255, 255, 255, 0.84);
+  margin-bottom:0px;
+}
+.navbar a{
+  color:#717171;
+}
+
+.first-nav .leaf {
+  border: 1px solid #dfdfdf;
+  margin-right:20px;
+}
+
+.dropdown-menu li {
+  border:none!important;
+}
+
+button.navbar-toggle {
+  margin-top:35px;
+  margin-right:35px;
+}
+
+.navbar .logo img{
+  height:100%;
+}
+ul.navbar-nav {
+  margin-top:25px;
+}
+.places_search {
+  float:left;
+  margin-top:29px;
+  margin-left:15px;
+  width: 340px;
+  max-width:100%;
+}
+.language-switcher ul {
+  list-style:none;
+}
+
+/**
+* Front Page top Settings 
+*/
+.main {
+  background-color:rgba(118, 118, 118, 0.40);
+  padding-top:20px;
+}
+
+.slide_caption {
+  height:400px;
+}
+
+.backstretch-caption-wrapper {
+  text-align:center;
+  position:absolute;
+  font-size:40px;
+  font-weight:600;
+  color:#fff;
+  margin-top:90px;
+  text-transform:uppercase;
+  width:100%;
+}
+
+.backstretch-caption {
+  position:absolute;
+  width:100%;
+}
+
+.backstretch-caption h1 {
+  font-size:50px;
+}
+
+.backstretch-caption-wrapper .slider-button a {
+  font-size: 24px;
+  color:#ffffff;
+  padding:10px;
+  background-color:rgba(255,255,255,0.5);
+  text-transform:none;
+  margin-top:10px;
+  font-weight:300;
+  border-radius:5px;
+}
+.backstretch-caption-wrapper .slider-button a:hover {
+  color:#ffffff;
+  text-decoration:none;
+  background-color:rgba(36, 48, 60, 0.62);
+}
+
+
+/**
+* Kill Round corners... 
+*/
+.well, .breadcrumb {
+  border-radius:0px;
+  border:none;
+}
+
+
+/**
+* form error settings... 
+*/
+div.error {
+    background: none!important;
+    color: #b94a48
+}
+
+/**
+* fix the drag and drop image form... 
+*/
+div.image-preview {
+    float: none;
+}
+
+/**
+* Ansicht Page settings... 
+*/
+.ansicht-audio, .ansicht-collections, .ansicht-comment, .ansicht-share, .ansicht-info, .ansicht-back-to-map {
+  margin-top:10px;
+}
+.ansicht-collections {
+  width:217px;
+}
+.ansicht-comment {
+  width:150px;
+}
+.ansicht-collections i {
+  float:left;
+  position:absolute;
+  color:#ffffff;
+}
+
+.ansicht-collections ul, .ansicht-collections a.ansicht-collection-button-message {
+  padding-left:30px;
+  cursor: hand; 
+  cursor: pointer;   
+}
+
+.ansicht-audio i,  .ansicht-comment i, .ansicht-share i, .ansicht-info i, .ansicht-back-to-map i {
+  float:left;
+  position:absolute;
+  color:#ffffff;
+}
+
+.ansicht-audio i.inactive  {
+  color:rgba(146, 146, 146, 1)
+}
+
+.ansicht-audio a, .ansicht-comment a, .ansicht-share a, .ansicht-info a,  .ansicht-back-to-map a, .ansicht-audio span {
+  color:#ffffff;
+  cursor: pointer; 
+  cursor: hand; 
+  padding-left:30px;
+}
+
+.ansicht-audio span {
+  cursor:default;
+  color:rgba(146, 146, 146, 1)
+}
+
+.ansicht-audio .audio-container{
+  background-color: rgba(38, 49, 57, 0.90);
+  position: absolute;
+  left: 90px;
+  top: -25px;
+  z-index: 1;
+  display: none;
+  height: 57px;
+  width:370px;
+  padding-top: 21px;
+}
+
+audio , .addthis_inline_share_toolbox {
+  float: left;
+  margin-right: 20px;
+}
+
+.audio-close i {  
+  cursor:pointer;
+  cursor:hand;
+  font-size:30px;
+}
+.share-close i{
+  cursor:pointer;
+  cursor:hand;
+  font-size:30px;
+  padding-top:5px;
+}
+
+.ansicht-share .share-container{
+  background-color: rgba(38, 49, 57, 0.90);
+  position: absolute;
+  left: 90px;
+  top: -25px;
+  z-index: 1;
+  display: none;
+  height: 57px;
+  width:210px;
+  padding-top: 14px;
+}
+
+#collection-modal a{
+  color:#1758a1;
+}
+
+#collection-modal .modal-footer {
+  padding-top:0px;
+  border:none;
+}
+
+#collection-modal .modal-body {
+  padding-bottom:0px;
+}
+
+#collection-modal.modal {
+  top:40%;
+}
+
+#ansicht-overview-map {
+  margin-bottom:20px;
+}
+
+.ansicht-info-content {
+  max-width:400px;
+}
+
+.ansicht-details {
+  margin-bottom:30px;
+}
+
+.ansicht-details h1 {
+  color: rgba(23, 88, 161, 1);
+  font-weight: 300;
+  padding-top: 20px;
+}
+.ansicht-details h3 {
+  color: rgba(38, 49, 57, 1);
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 0;
+}
+.ansicht-details h4 , .ansicht-details h2 {
+  text-transform:none;
+  color: rgba(23, 88, 161, 1);
+  font-weight: 300;
+  padding-top: 20px;
+  font-size: 20px;
+  margin-top:0px;
+}
+
+.field-name-field-tags .field-item, .field-name-field-kategorie .field-item {
+  float:left;
+  margin-right:20px;
+}
+
+.ansicht-picture {
+  background-color: rgba(38, 49, 57, 1);
+  padding-top: 30px;
+}
+
+.ansicht-details-aktion {
+  padding-top:15px;
+  padding-bottom:15px;
+  padding-left:15px;
+
+}
+
+.ansicht-details-aktion a {
+  color:#ffffff;
+}
+
+.ansicht-info-table {
+  margin-top:30px;
+}
+
+
+/* kill some useless comment features */
+.comment-wrapper .comment_forbidden {
+  display:none;
+}
+
+.links .comment-add {
+  display: none;
+}
+.links .comment-reply {
+  display: none;
+}
+.submitted .permalink {
+  display: none;
+}
+#edit-comment-body-und-0-format {
+  display: none;
+}
+#comments h3 {
+    display: none;
+}
+li.blog_usernames_blog {
+    display: none;
+}
+.comment {
+    border-bottom: 1px solid grey;
+    margin-top: 15px;
+    padding-bottom: 10px;
+}
+.comment .new {
+    display: none;
+}
+
+.user-picture {
+    float: left;
+    margin-right: 20px;
+}
+
+/**
+* overview slider settings... 
+*/
+.futurehistory-single-image img {
+  max-width:100%;
+  display:block;
+}
+
+.ansicht-picture img {
+  margin: 0px auto;
+}
+
+
+/**
+* Footer Settings 
+*/
+
+.footer-start {
+  background-image: url("/sites/all/themes/future_history/img/footer-bg.png");
+  background-position: center center;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  /*background-color:rgba(255, 255, 255, 0.84);*/
+  margin-top:0px;
+  padding-bottom: 5px;
+  padding-top: 25px;
+  height:100px;
+  color:#ffffff;
+}
+.footer-start a {
+  color:#ffffff;
+}
+.footer-start h2 {
+  color:#ffffff;
+  text-transform:uppercase;
+  font-weight:200;
+}
+
+.footer-entdecken {
+  background-color:#424242;
+  margin-top:0px;
+  padding-bottom: 5px;
+  padding-top: 25px;
+  height:100px;
+  color:#ffffff
+}
+.footer-entdecken a {
+  color:#ffffff
+;
+}
+.footer-entdecken h2 {
+  color:#ffffff;
+  text-transform:uppercase;
+  font-weight:200;
+}
+
+
+.footer {
+  background-image: url("/sites/all/themes/future_history/img/footer-bg.png");
+  background-position: center center;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  margin-top:0px;
+  padding-bottom: 5px;
+  padding-top: 25px;
+  height:100px;
+  color:#ffffff;  
+}
+.footer a {
+  color:#ffffff;
+}
+.footer h2 {
+  color:#ffffff;
+  text-transform:uppercase;
+  font-weight:200;
+}
+
+
+/**
+*  style the user menu in TOP Navigation  
+*/
+
+.fh-nav-user-picture {
+  margin-left:30px;
+}
+
+.fh-nav-user-picture span.fh-user {
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
+
+.fh-nav-user-picture a {
+  padding: 0 15px 0 0!important;
+  height:50px;
+}
+.fh-nav-user-picture img {
+  float:left;
+  margin-right:15px;
+}
+
+.fh-nav-user-picture .link-text {
+  padding-top:15px;
+  float:left;
+}
+
+.fh-nav-user-picture span.caret {
+  margin-right:5px;
+}
+
+.fh-nav-user-picture.open > a, .fh-nav-user-picture.open > a:hover, .fh-nav-user-picture.open > a:focus {
+  background:none!important;
+  color: #555555;
+}
+
+.fh-nav-user-picture .dropdown-menu {
+  margin-top: 6px !important;
+  padding: 8px;
+  width: 171px;
+}
+
+.fh-nav-user-picture-dd a {
+  height: auto;
+  padding: 5px !important;
+}
+
+/**
+*  hide some fields 
+*/
+.form-item-field-stadt-und, #futurehistory-dist-slider-53-0, #edit-field-position-der-aufnahme-und-0-distitem {
+  display:none;
+}
+
+#edit-field-bild-und-0-upload-button, #edit-field-bild-overlay-und-0-upload-button, #edit-field-audio-datei-und-0-upload-button{
+  display:none;
+}
+
+
+
+
+/*######### Claus Seiberth Startseitenformatierung Anfang ##################################################################*/
+
+
+/* Rand rechts --- Problem  gelöst */
+.front  .col-sm-12 {padding-right: 0px; min-height: 0px;}
+.front .start_content {padding-bottom: 0px;}
+.front .field-collection-container {margin-bottom: 0px;}
+.front .row {margin-right: 0px !important;}
+.front .container {padding-right: 0px !important;}
+.front .container > .navbar-header, .container > .navbar-collapse {margin-right: 0px; margin-left: 0px;}
+/* ################################### */
+
+
+
+
+/*####### Topbar Scroll-Animation größer/kleiner Anfang ######################################################################## */
+
+.front .navbar {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  background-color:rgba(255, 255, 255, 0.9);
+  margin-bottom:0px;
+  -webkit-transition: all 0.4s ease !important;
+  transition: all 0.4s ease !important;
+}
+.front .logo {
+	height: 83px;
+	-webkit-transition: all 0.4s ease !important;
+	transition: all 0.4s ease !important;
+}
+.navbar-small { height: 80px !important;}
+.logo-small { height: 60px !important;}
+
+/*####### Topbar Scroll-Animation größer/kleiner Ende ######################################################################## */
+
+
+/*####### Startseite Button "Ich möchte mehr erfahren" Anfang ######################################################################## */
+
+.startseite-button-oben {
+	position: absolute;
+	margin: 0 auto;
+	width: 100%;
+	z-index: 12;
+	text-align: center;
+	margin-top: -25%;	
+}
+
+.startseite-button-oben a {
+	text-decoration: none;
+	font-size: 22px;
+    color: #ffffff;
+    padding: 10px;
+    background-color: rgba(102,102,102,0.7);
+    text-transform: none;
+    font-weight: 300;
+    border-radius: 5px;
+}
+
+.startseite-button-oben a:hover {
+	text-decoration: none;
+    background-color: rgba(102,102,102,0.7);
+}
+/*####### Startseite Button "Ich möchte mehr erfahren" Ende ######################################################################## */
+
+
+
+
+
+/*####### Startseite Slider Anfang ######################################################################## */
+
+.flexslider {margin-bottom: 20px;}
+
+#block-views-big-slider-block .flexslider, .field-name-field-content-slide .flexslider {
+    margin-bottom: 0px;
+    background: transparent;
+    border: 0px solid #fff;
+} 
+
+.field-name-field-content-slide .field-item img {
+	border: 1px solid #e8e8e8;
+}
+
+.slide_caption {display: none;}
+
+.slider-headline {
+	position: absolute;
+	margin: 0 auto;
+	width: 100%;
+	z-index: 14;
+	margin-top: -43%;
+	border: 0px solid red;
+	text-align: center;
+}
+
+.slider-headline-text {
+	margin: 0 auto;
+	width: 100%;
+	color: #ffffff;
+	/*font-size: 3vw;*/
+	font-size: 40px;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	line-height: 1.1;
+}
+
+#block-views-big-slider-block {height: auto; overflow: hidden;}
+
+#block-views-big-slider-block .flexslider {margin-bottom: 0px;}
+
+.field-name-field-content-slide-1-text p,
+.field-name-field-content-slide-2-text p,
+.field-name-field-content-slide-3-text p {text-align: left;}
+
+/*####### Startseite Slider Ende ######################################################################## */
+
+
+
+/*####### Allgemeine Formatierungen Anfang ######################################################################## */
+
+.navbar a {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -80px;
+    visibility: hidden;
+}
+
+.front .container {
+	position: relative;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#block-futurehistory-googleplaces-places-startseite {
+	position: absolute;
+	margin: 0 auto;
+	width: 100%;
+	z-index: 99;
+	margin-top: -20%;
+}
+
+.field-collection-container {border-bottom: none;margin-bottom: 1em;}
+
+.main {
+	position: relative;
+	margin-top: 0px;
+    padding-top: 0px;
+	background-color: #ffffff !important;
+}
+
+/*####### Allgemeine Formatierungen Anfang ######################################################################## */
+
+
+/*####### Die Hintergrundfarbe eines Content-Elements wird zwar dargestellt und mit PHP gesucht, ist aber unsichtbar ##### */
+.field-collection-view .field-name-field-backcolor-content-element {visibility: hidden;}
+
+
+/*####### Das modale Dialogfenster wenn man nicht eingeloggt ist ###################### */
+.user-login-message {cursor: pointer;}
+#user-login-modal {text-align: left; top: 40%;}
+#user-login-modal .modal-body {padding-bottom: 0px;}
+#user-login-modal .modal-footer {padding-top: 0px; border: none;}
+
+
+
+
+
+
+
+/*####### Responsive Anfang ######################################################################## */
+
+
+
+@media (max-width: 767px) {	
+	.container > .navbar-collapse {
+		position: relative;
+		z-index: 999;
+	    max-height: 340px;
+	    padding-right: 15px;
+	    padding-left: 25px;
+	    overflow-x: hidden;
+	    border-top: 1px solid transparent;
+	    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+	    -webkit-overflow-scrolling: touch;
+	    background-color: rgba(255, 255, 255, 0.9);
+	    margin-left: 0px;
+	}
+	
+	.startseite-button-oben {display: none;}
+	
+	#block-futurehistory-googleplaces-places-startseite {
+		position: relative;
+		margin-top: 0px;
+		}		
+		
+		.content .field-name-field-content-headline {
+			font-size: 35px;
+			line-height: 1.07885em;
+			font-weight: 200;
+		}
+
+		.field-name-field-content-headline strong {
+				font-size: 28px;
+				font-weight: 400;
+		}
+		
+		.navbar a {
+			font-size: 18px;
+			font-weight: 400;
+		}
+		
+	.front .navbar-btn {margin-bottom: 0px;}	
+	.front .navbar-toggle {margin-bottom: 0px;}
+	
+	.front .navbar {
+		position: relative;
+		height: 70px;
+		margin-bottom: 5px;
+		}
+		
+	.front	.navbar-default {border: none;}
+	.front .logo {height: 60px;}
+	#block-views-big-slider-block {width: 100%;}
+	.places_box_startseite {padding-top: 0px !important;}
+	.places_box_startseite_button {width: 100%;}	
+	#block-futurehistory-googleplaces-places-startseite .places_box_startseite .search_wrapper {width: 100%;}
+		
+}
+@media (max-width: 991px) {	
+	.startseite-button-oben {display: none;}
+	#block-futurehistory-googleplaces-places-startseite {margin-top: -25%;}
+}
+
+@media (max-width: 550px) {
+	.slider-headline-text {font-size: 180%;}
+	
+	#block-futurehistory-googleplaces-places-startseite {
+		position: relative;
+		margin-top: 0px;
+		}
+		
+}
+
+
+
+@media (min-width: 768px) {	
+	.places_box_startseite .col-sm-offset-3 {margin-left: 29%;}	
+	.places_box_startseite .col-sm-7 {width: 50%;}
+}
+@media (min-width: 992px) {	
+	.places_box_startseite .col-sm-offset-3 {margin-left: 18%;}	
+	.places_box_startseite .col-md-6  {margin-left: 0%;}	
+	.places_box_startseite .col-sm-7 {width: 33.3333%;}	
+}
+/*####### Responsive Ende ######################################################################## */
+
+
+/*####### Typographie Anfang ######################################################################## */
+.field-name-field-content-headline .field-item p {line-height: 1.1;}
+/*####### Typographie Ende ######################################################################## */
+
+
+
+
+/*######### Claus Seiberth Startseitenformatierung Ende #########################################################################*/
+
+
+
+
+
+
+
+
+
+
+
