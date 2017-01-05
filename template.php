@@ -58,11 +58,13 @@ function future_history_preprocess_views_exposed_form(&$variables) {
 }
 
 function future_history_preprocess_page(&$variables) {
-    if (isset($variables['node']->type)) {
-        $nodetype = $variables['node']->type;
-        $variables['theme_hook_suggestions'][] = 'page__' . $nodetype;
+  if (isset($variables['node']->type)) {
+    if (!($variables['node']->type === 'ansicht' && strpos($_GET['q'], 'edit') !== FALSE)) {
+      $nodetype = $variables['node']->type;
+      $variables['theme_hook_suggestions'][] = 'page__' . $nodetype;
     }
-    //echo '<pre>'; var_dump($variables['theme_hook_suggestions']); echo '</pre>';
+  }
+  //echo '<pre>'; var_dump($variables['theme_hook_suggestions']); echo '</pre>';
 }
 
 //function future_history_preprocess_user_picture(&$variables) {
