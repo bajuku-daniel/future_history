@@ -1,1 +1,1 @@
-FutureHistory Bootstrap subtheme 
+FutureHistory Bootstrap subtheme
