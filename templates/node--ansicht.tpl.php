@@ -139,15 +139,15 @@
             <!-- TODO: put all the variables in a Translage string print t(); -->
             <tbody>
               <tr>
-                <td class="ansicht-info-lable"><b>Stadt der Ansicht:</b></td>
+                <td class="ansicht-info-lable"><b>Ort</b></td>
                 <td class="ansicht-info-content"><?php print($content['field_stadt']['0']['#markup']); ?></td>
               </tr>
                <tr>
-                <td class="ansicht-info-lable"><b>Verfasser der Ansicht:</b></td>
+                <td class="ansicht-info-lable"><b>Autor</b></td>
                 <td class="ansicht-info-content"><?php print render($name); ?></td>
               </tr>
               <tr>
-                <td class="ansicht-info-lable"><b>Kategorien:</b></td>
+                <td class="ansicht-info-lable"><b>Kategorien</b></td>
                 <td class="ansicht-info-content"><?php print render($content['field_kategorie']); ?></td>
               </tr>
               <tr>
@@ -156,16 +156,60 @@
               </tr>
               <tr>
                 <td class="ansicht-info-lable"><b>Lizenz</b></td>
-                <td class="ansicht-info-content"><?php print render($content['field_lizenz']); ?></td>
+                <td class="ansicht-info-content">
+
+                <?php
+                  $term=taxonomy_term_load($node->field_lizenz['und'][0]['tid']);
+                  $lizenz_name = $term->name;
+                  $lizenz_link = NULL;
+                  if (!empty($term->field_lizenz_link)) {
+                    $lizenz_link = $term->field_lizenz_link['und'][0]['url'];
+                    print '<a target="_blank" href="' . $lizenz_link . '">' . $lizenz_name .'</a>';
+                  } else {
+                    print $lizenz_name;
+                  }
+                ?>
+
+              </td>
               </tr>
               <tr>
                 <td class="ansicht-info-lable"><b>Bildquelle</b></td>
-                <td style="word-break:break-all;word-wrap:break-word" class="ansicht-info-content"><?php print render($content['field_bildquelle']); ?></td>
+                <?php if (!empty($content['field_bildquelle_url'])): ?>
+                  <td style="word-break:break-all;word-wrap:break-word" class="ansicht-info-content"><a href="<?php print $content['field_bildquelle_url'][0]['safe_value']; ?>"><?php print render($content['field_bildquelle']); ?></a></td>
+                <?php else: ?>
+                  <td style="word-break:break-all;word-wrap:break-word" class="ansicht-info-content"><?php print render($content['field_bildquelle']); ?></td>
+                <?php endif; ?>
               </tr>
               <tr>
                 <td class="ansicht-info-lable"><b>Urheber</b></td>
                 <td class="ansicht-info-content"><?php print render($content['field_urheber']); ?></td>
               </tr>
+              <?php if (!empty($content['field_bild_overlay'])): ?>
+                <tr>
+                  <td class="ansicht-info-lable"><b>Urheber Vergleichsbild</b></td>
+                  <td class="ansicht-info-content"><?php print render($content['field_autor_overlay']); ?></td>
+                </tr>
+                <tr>
+                  <td class="ansicht-info-lable"><b>Lizenz Vergleichsbild</b></td>
+                  <td class="ansicht-info-content">
+
+                    <?php
+                      if (!empty($node->field_lizenz_overlay)) {
+                        $term=taxonomy_term_load($node->field_lizenz_overlay['und'][0]['tid']);
+                        $lizenz_name = $term->name;
+                        $lizenz_link = NULL;
+                        if (!empty($term->field_lizenz_link)) {
+                          $lizenz_link = $term->field_lizenz_link['und'][0]['url'];
+                          print '<a target="_blank" href="' . $lizenz_link . '">' . $lizenz_name .'</a>';
+                        } else {
+                          print $lizenz_name;
+                        }
+                      }
+                    ?>
+
+                  </td>
+                </tr>
+              <?php endif; ?>
             </tbody>
           </table>
 
@@ -198,7 +242,10 @@
             hide($content['field_kategorie']);
             hide($content['field_genauigkeit']);
             hide($content['field_position_der_aufnahme']);
-            print render($content);
+            hide($content['field_bildquelle_url']);
+            hide($content['field_lizenz_overlay']);
+            hide($content['field_autor_overlay']);
+            //print render($content);
           ?>
 
           <?php print render($content['comments']); ?>
