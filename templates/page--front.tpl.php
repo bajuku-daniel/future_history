@@ -3,7 +3,7 @@
 
 <script>
     jQuery(function($) {
-    $(window).scroll(function(){ 
+    $(window).scroll(function(){
         if($(window).scrollTop() >50) {
               	$('.navbar').addClass("navbar-small");
 				$('.logo').addClass("logo-small");
@@ -84,11 +84,12 @@
           <?php endif; ?>
 
           <div class="start_content container-fluid">
-	
-	
+
+
             <?php print render($page['content']); ?>
-			
-			<?php print('<!-- Modal -->
+
+			      <?php print('
+            <!-- Modal -->
 		            <div class="modal fade" id="user-login-modal" role="dialog">
 
 		              <div class="modal-dialog">
@@ -103,7 +104,7 @@
 		                </div>
 
 		                <div class="modal-body">
-		                  <p>Zum Einstellen eigener Bilder bitte <a href="/user/login">ANMELDEN</a> oder <a href="/user/register">REGISTRIEREN</a></p>
+		                  <p>Zum Einstellen eigener Bilder bitte <a href="/user/login?destination=node/add/ansicht">ANMELDEN</a> oder <a href="/user/register?destination=node/add/ansicht">REGISTRIEREN</a></p>
 		                </div>
 
 		                <div class="modal-footer">
@@ -115,7 +116,8 @@
 
 
 		            </div>
-		          </div>'); ?>
+		          </div>');
+              ?>
 
           </div>
         </section>
@@ -124,7 +126,7 @@
   </div>
 <?php endif; ?>
 
-  
+
 <?php if ($is_front == FALSE): ?>
   <div class="main-container container fill">
     <header role="banner" id="page-header">

@@ -78,7 +78,7 @@
             </div>
 
           <?php else : ?>
-            <i class="material-icons">collections</i> <a data-toggle="modal" data-target="#login-modal" class="ansicht-collection-button-message"> Hinzufügen</a>
+            <i class="material-icons">library_add</i> <a data-toggle="modal" data-target="#login-modal" class="ansicht-collection-button-message"> Hinzufügen</a>
             <!-- Modal -->
             <div class="modal fade" id="login-modal" role="dialog">
               <div class="modal-dialog">
@@ -89,7 +89,8 @@
                     <h4 class="modal-title">Lieber Besucher</h4>
                   </div>
                   <div class="modal-body">
-                    <p>Zum Anlegen einer Bildersammlung oder einer Tour bitte <a href="/user/login">ANMELDEN</a> oder <a href="/user/register">REGISTRIEREN</a></p>
+                    <?php $destination = drupal_get_destination();?>
+                    <p>Zum Anlegen einer Bildersammlung oder einer Tour bitte <a href="/user/login?destination=<?php print $destination['destination']; ?>">ANMELDEN</a> oder <a href="/user/register?destination=<?php print $destination['destination']; ?>">REGISTRIEREN</a></p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
@@ -101,8 +102,33 @@
           </div>
 
           <div class="col-md-2 ansicht-comment">
-            <i class="material-icons">comment</i><a href="#kommentare" class="ansicht-comment-button"> Kommentieren</a>
-          </div>
+            <?php if ($logged_in == 1): ?>
+                <i class="material-icons">comment</i><a href="#kommentare" class="ansicht-comment-button"> Kommentieren</a>
+              </div>
+            <?php else : ?>
+                <i class="material-icons">comment</i> <a data-toggle="modal" data-target="#login-modal-comment" class="ansicht-collection-button-message"> Kommentieren</a>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="login-modal-comment" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Lieber Besucher</h4>
+                    </div>
+                    <div class="modal-body">
+                      <?php $destination = drupal_get_destination();?>
+                      <p>Zum kommentieren eines Bildes bitte <a href="/user/login?destination=<?php print $destination['destination'];?>">ANMELDEN</a> oder <a href="/user/register?destination=<?php print $destination['destination'];?>">REGISTRIEREN</a></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <?php endif; ?>
+
           <div class="col-md-1 ansicht-share">
             <i class="material-icons">share</i><a class="ansicht-share-button"> Teilen</a>
             <div class="share-container">
