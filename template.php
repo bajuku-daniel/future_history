@@ -42,7 +42,11 @@ function future_history_menu_link(array $variables) {
   else {
     $title = $element['#title'];
   }
+  if($element['#href'] == "user/login" || $element['#href'] == "user/register" ){
+    $element['#localized_options']['query'] = array('destination' => $_GET['q']);
+  }
   $output = l($title, $element['#href'], $element['#localized_options']);
+
 
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
