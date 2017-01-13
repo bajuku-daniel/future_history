@@ -4,7 +4,8 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
   color:#717171;
-  font-size:14px;
+  font-size:16px;
+  font-weight:300;
 }
 a {
   color:#1357a0;
@@ -39,6 +40,7 @@ div.vertical-tabs .vertical-tab-button strong{
 
 h1, h2, h3, h4, h5 {
   font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
 }
 
 h4 {
@@ -413,20 +415,20 @@ audio , .addthis_inline_share_toolbox {
   padding-top: 14px;
 }
 
-#login-modal a{
+#login-modal a, #login-modal-comment a{
   color:#1758a1;
 }
 
-#login-modal .modal-footer {
+#login-modal .modal-footer, #login-modal-comment .modal-footer {
   padding-top:0px;
   border:none;
 }
 
-#login-modal .modal-body {
+#login-modal .modal-body, #login-modal-comment .modal-body{
   padding-bottom:0px;
 }
 
-#login-modal .modal {
+#login-modal .modal, #login-modal-comment .modal {
   top:40%;
 }
 
@@ -466,7 +468,9 @@ audio , .addthis_inline_share_toolbox {
   float:left;
   margin-right:20px;
 }
-
+.field-name-field-bildquelle {
+  float:left;
+}
 .ansicht-picture {
   background-color: rgba(38, 49, 57, 1);
   padding-top: 30px;

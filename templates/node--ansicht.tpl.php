@@ -78,7 +78,7 @@
             </div>
 
           <?php else : ?>
-            <i class="material-icons">collections</i> <a data-toggle="modal" data-target="#login-modal" class="ansicht-collection-button-message"> Hinzufügen</a>
+            <i class="material-icons">library_add</i> <a data-toggle="modal" data-target="#login-modal" class="ansicht-collection-button-message"> Hinzufügen</a>
             <!-- Modal -->
             <div class="modal fade" id="login-modal" role="dialog">
               <div class="modal-dialog">
@@ -89,7 +89,8 @@
                     <h4 class="modal-title">Lieber Besucher</h4>
                   </div>
                   <div class="modal-body">
-                    <p>Zum Anlegen einer Bildersammlung oder einer Tour bitte <a href="/user/login">ANMELDEN</a> oder <a href="/user/register">REGISTRIEREN</a></p>
+                    <?php $destination = drupal_get_destination();?>
+                    <p>Zum Anlegen einer Bildersammlung oder einer Tour bitte <a href="/user/login?destination=<?php print $destination['destination']; ?>">ANMELDEN</a> oder <a href="/user/register?destination=<?php print $destination['destination']; ?>">REGISTRIEREN</a></p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
@@ -101,8 +102,33 @@
           </div>
 
           <div class="col-md-2 ansicht-comment">
-            <i class="material-icons">comment</i><a href="#kommentare" class="ansicht-comment-button"> Kommentieren</a>
-          </div>
+            <?php if ($logged_in == 1): ?>
+                <i class="material-icons">comment</i><a href="#kommentare" class="ansicht-comment-button"> Kommentieren</a>
+              </div>
+            <?php else : ?>
+                <i class="material-icons">comment</i> <a data-toggle="modal" data-target="#login-modal-comment" class="ansicht-collection-button-message"> Kommentieren</a>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="login-modal-comment" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Lieber Besucher</h4>
+                    </div>
+                    <div class="modal-body">
+                      <?php $destination = drupal_get_destination();?>
+                      <p>Zum kommentieren eines Bildes bitte <a href="/user/login?destination=<?php print $destination['destination'];?>">ANMELDEN</a> oder <a href="/user/register?destination=<?php print $destination['destination'];?>">REGISTRIEREN</a></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <?php endif; ?>
+
           <div class="col-md-1 ansicht-share">
             <i class="material-icons">share</i><a class="ansicht-share-button"> Teilen</a>
             <div class="share-container">
@@ -139,15 +165,15 @@
             <!-- TODO: put all the variables in a Translage string print t(); -->
             <tbody>
               <tr>
-                <td class="ansicht-info-lable"><b>Stadt der Ansicht:</b></td>
+                <td class="ansicht-info-lable"><b>Ort</b></td>
                 <td class="ansicht-info-content"><?php print($content['field_stadt']['0']['#markup']); ?></td>
               </tr>
                <tr>
-                <td class="ansicht-info-lable"><b>Verfasser der Ansicht:</b></td>
+                <td class="ansicht-info-lable"><b>Autor</b></td>
                 <td class="ansicht-info-content"><?php print render($name); ?></td>
               </tr>
               <tr>
-                <td class="ansicht-info-lable"><b>Kategorien:</b></td>
+                <td class="ansicht-info-lable"><b>Kategorien</b></td>
                 <td class="ansicht-info-content"><?php print render($content['field_kategorie']); ?></td>
               </tr>
               <tr>
@@ -156,16 +182,60 @@
               </tr>
               <tr>
                 <td class="ansicht-info-lable"><b>Lizenz</b></td>
-                <td class="ansicht-info-content"><?php print render($content['field_lizenz']); ?></td>
+                <td class="ansicht-info-content">
+
+                <?php
+                  $term=taxonomy_term_load($node->field_lizenz['und'][0]['tid']);
+                  $lizenz_name = $term->name;
+                  $lizenz_link = NULL;
+                  if (!empty($term->field_lizenz_link)) {
+                    $lizenz_link = $term->field_lizenz_link['und'][0]['url'];
+                    print '<a target="_blank" href="' . $lizenz_link . '">' . $lizenz_name .'</a>';
+                  } else {
+                    print $lizenz_name;
+                  }
+                ?>
+
+              </td>
               </tr>
               <tr>
                 <td class="ansicht-info-lable"><b>Bildquelle</b></td>
-                <td style="word-break:break-all;word-wrap:break-word" class="ansicht-info-content"><?php print render($content['field_bildquelle']); ?></td>
+                <?php if (!empty($content['field_bildquelle_url'])): ?>
+                  <td style="word-break:break-all;word-wrap:break-word" class="ansicht-info-content"><a href="<?php print $content['field_bildquelle_url'][0]['safe_value']; ?>"><?php print render($content['field_bildquelle']); ?></a></td>
+                <?php else: ?>
+                  <td style="word-break:break-all;word-wrap:break-word" class="ansicht-info-content"><?php print render($content['field_bildquelle']); ?></td>
+                <?php endif; ?>
               </tr>
               <tr>
                 <td class="ansicht-info-lable"><b>Urheber</b></td>
                 <td class="ansicht-info-content"><?php print render($content['field_urheber']); ?></td>
               </tr>
+              <?php if (!empty($content['field_bild_overlay'])): ?>
+                <tr>
+                  <td class="ansicht-info-lable"><b>Urheber Vergleichsbild</b></td>
+                  <td class="ansicht-info-content"><?php print render($content['field_autor_overlay']); ?></td>
+                </tr>
+                <tr>
+                  <td class="ansicht-info-lable"><b>Lizenz Vergleichsbild</b></td>
+                  <td class="ansicht-info-content">
+
+                    <?php
+                      if (!empty($node->field_lizenz_overlay)) {
+                        $term=taxonomy_term_load($node->field_lizenz_overlay['und'][0]['tid']);
+                        $lizenz_name = $term->name;
+                        $lizenz_link = NULL;
+                        if (!empty($term->field_lizenz_link)) {
+                          $lizenz_link = $term->field_lizenz_link['und'][0]['url'];
+                          print '<a target="_blank" href="' . $lizenz_link . '">' . $lizenz_name .'</a>';
+                        } else {
+                          print $lizenz_name;
+                        }
+                      }
+                    ?>
+
+                  </td>
+                </tr>
+              <?php endif; ?>
             </tbody>
           </table>
 
@@ -198,7 +268,10 @@
             hide($content['field_kategorie']);
             hide($content['field_genauigkeit']);
             hide($content['field_position_der_aufnahme']);
-            print render($content);
+            hide($content['field_bildquelle_url']);
+            hide($content['field_lizenz_overlay']);
+            hide($content['field_autor_overlay']);
+            //print render($content);
           ?>
 
           <?php print render($content['comments']); ?>
