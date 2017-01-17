@@ -12,8 +12,17 @@
         <div class="row">
           <div class="col-md-10 col-md-offset-1 col-centered">
             <?php if (!empty($content['field_bild_overlay'])): ?>
+              <?php
+              $overlay_image_style =  $content['field_bild_overlay']['0']['#image_style'];
+              if(isset($variables['mc_style'])){
+                $overlay_image_style = $variables['mc_style'];
+                //TODO: call themed IMAGE manualcrop here
+                $imgstyled = cb_util_render_image($content['field_bild_overlay']['#items']['0'],$overlay_image_style);
+              }
+              ?>
+
               <figure class="cd-image-container" style="max-height:<?php print($image_old_info['height']); ?>px; max-width:<?php print($image_old_info['width']); ?>px;">
-                <img src="<?php print  image_style_url($content['field_bild_overlay']['0']['#image_style'] ,$content['field_bild_overlay']['#items']['0']['uri']); ?>" alt="Modified Image">
+                <?php print $imgstyled ?>
     			<span class="cd-image-label" data-type="modified">New</span>
      	  	    <div class="cd-resize-img"> <!-- the resizable image on top -->
                   <img src="<?php print  image_style_url($content['field_bild']['0']['#image_style'] ,$content['field_bild']['#items']['0']['uri']); ?>" alt="Original Image">
