@@ -25,14 +25,17 @@
  */
  $i = 0;
  foreach ($fields as $id => $field) {
-
    if ($field->content != ''){
-     print $field->label_html;
-     print $field->content;
-     if ($i==0){
-       print ', ';
-     }
+    //  print '"' . $field->label_html . '" : "';
+    //  print $field->content . '"';
+    print $field->content;
+    //  if ($i==0){
+    //    print ', ';
+    //  }
+    //$position[$field->label_html] = $field->content;
    }
    $i++ ;
  }
+ //print_r($position);
+ //return $position;
 ?>
