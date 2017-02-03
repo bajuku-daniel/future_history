@@ -50,8 +50,6 @@ h4 {
   margin-top: 30px;
 }
 
-
-
 /* Styles for the flag_lists Touren View*/
 
 #edit-data-table .panel-heading {
@@ -525,6 +523,19 @@ audio , .addthis_inline_share_toolbox {
 
 
 /* Style the "add-to-modal" (entdecken bereich screen)*/
+
+#entdecken-map-nav .modal-dialog {
+  padding-bottom: 30px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: 290px;
+  padding: 10px;
+  position: relative;
+  z-index: 1050;
+  margin-top: 220px;
+}
+
+
 #add-to-modal .modal-add-body ul li {
   margin-left:40px;
 }
