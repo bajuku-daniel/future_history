@@ -50,6 +50,14 @@ h4 {
   margin-top: 30px;
 }
 
+/* Styles for the drupal boostrap message modal*/
+
+#bmm-modal .modal-body a.close{
+  display:none;
+}
+
+
+
 
 
 /* Styles for the flag_lists Touren View*/
