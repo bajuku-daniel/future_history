@@ -523,6 +523,54 @@ audio , .addthis_inline_share_toolbox {
   width:450px;
 }
 
+
+/* Style the "add-to-modal" (entdecken bereich screen)*/
+#add-to-modal .modal-add-body ul li {
+  margin-left:40px;
+}
+
+#add-to-modal .modal-add-body a {
+  color: rgba(23, 88, 161, 1);
+}
+
+#add-to-modal .modal-add-body ul {
+  padding-left:0px;
+}
+
+#add-to-modal .modal-add-body ul li.bookmarks {
+    font-family: 'FontAwesome';
+    content: '&#xE413;';
+    margin:0 5px 0 -15px;
+}
+
+#add-to-modal .modal-add-body ul li {
+  background-image: url("../img/icon_tour.svg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 30px auto;
+  list-style: outside none none;
+  margin-top:20px;
+  cursor: default;
+}
+
+#add-to-modal .modal-add-body ul li#bookmarks {
+  background-image: url("../img/icon_bookmark.svg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 30px auto;
+  list-style: outside none none;
+  margin-top:20px;
+  cursor: default;
+}
+
+#add-to-modal .modal-add-body ul li a{
+  margin-left:40px;
+}
+
+#add-to-modal .modal-add-body .flag-message {
+  margin-left:40px;
+  width:450px;
+}
 /* kill some useless comment features */
 .comment-wrapper .comment_forbidden {
   display:none;
