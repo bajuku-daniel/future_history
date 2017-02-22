@@ -80,8 +80,12 @@ vertical-align: middle;
   vertical-align:top;
 }
 
-#edit-data-table tr {
+#entry-order tr {
   height:130px;
+}
+
+#edit-data-table table{
+ border-collapse: initial;
 }
 
 #edit-data-table .tabledrag-toggle-weight-wrapper {
