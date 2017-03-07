@@ -19,11 +19,9 @@
   var mapCenter;
   var allTourMarker = [];
 
-
-
+  var maxTourDistance = 10000;
 
   function showTourOnMap(tour_id='14',tourname="") {
-
     // start the ajax request to get tour details
     $.ajax({
       url: tour_url,
@@ -54,6 +52,8 @@
   function calculateAndDisplayRoute(directionsService, directionsDisplay, original_tourdata) {
     var waypts = [];
     var tour_pois = [];
+    var initTourDistance = $('#tour_distance').html();
+
     for (var i = 0; i < original_tourdata.length; i++) {
       if (i === 0) {
         // Start EndPunkt benötigen Datenformat mit lng/lat oder Text e.g. New York,US
@@ -91,19 +91,26 @@
     }
     // check if we have more than one poi in our tour
     if (one_poi == 0) {
-      directionsService.route({
-        origin: my_origin,
-        destination: my_destination,
-        waypoints: waypts,
-        optimizeWaypoints: true,
-        travelMode: google.maps.TravelMode.WALKING
-      }, function (response, status) {
-        if (status === google.maps.DirectionsStatus.OK) {
-          directionsDisplay.setDirections(response);
-        } else {
-          window.alert('Directions request failed due to ' + status);
-        }
-      });
+      if (initTourDistance < maxTourDistance) {
+        directionsService.route({
+          origin: my_origin,
+          destination: my_destination,
+          waypoints: waypts,
+          optimizeWaypoints: false,
+          travelMode: google.maps.TravelMode.WALKING
+        }, function (response, status) {
+          if (status === google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+      else {
+        $('#tour_distance').html(' > 10000 ')
+
+      }
+
     } else {
       var poiPosition = new google.maps.LatLng(tour_pois[0]['lat'],tour_pois[0]['lng']);
       Drupal.futurehistoryTourMap.map.panTo(poiPosition);
@@ -132,6 +139,12 @@
 
       //put all markers in our tour array
       allTourMarker.push(Drupal.futurehistoryTourMap.marker);
+
+      var bounds = new google.maps.LatLngBounds();
+      for (var c = 0; c < allTourMarker.length; c++) {
+       bounds.extend(allTourMarker[c].getPosition());
+      }
+      Drupal.futurehistoryTourMap.map.fitBounds(bounds);
     }
   }
 
