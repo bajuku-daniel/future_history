@@ -16,10 +16,8 @@ regions[help]           = 'Help'
 regions[content]        = 'Content'
 regions[sidebar_first]  = 'Primary'
 regions[sidebar_second] = 'Secondary'
-regions[footer-1]         = 'Footer-1'
-regions[footer-2]         = 'Footer-2'
-regions[footer-3]         = 'Footer-3'
-regions[footer-4]         = 'Footer-4'
+regions[footer-top]         = 'Footer-top'
+regions[footer-bottom]         = 'Footer-bottom'
 regions[page_top]       = 'Page top'
 regions[page_bottom]    = 'Page bottom'
 
@@ -39,11 +37,11 @@ stylesheets[all][] = css/style.css
 ; ;----------------------------------
 ; ; METHOD 1: Bootstrap Source Files
 ; ;----------------------------------
-; 
+;
 ; ;;;;;;;;;;;;;;;;;;;;;
 ; ;; Scripts
 ; ;;;;;;;;;;;;;;;;;;;;;
-; 
+;
  scripts[] = 'js/futurehistory.js'
 
 ; scripts[] = 'bootstrap/js/affix.js'

@@ -52,7 +52,7 @@
 <!-- Removed all the sections and Div container and Style the view in the entdecken view template -->
 <!-- futurehistory-entdecken-map.tpl.php -->
 <div class="ansicht-container container-fluid">
-  <?php print $messages; ?>  
+  <?php print $messages; ?>
   <?php if (!empty($page['help'])): ?>
     <?php print render($page['help']); ?>
   <?php endif; ?>
@@ -66,17 +66,13 @@
 <footer class="footer-entdecken">
   <div class="container">
     <div class="row">
-	  <div class="col-md-3">
-        <?php print render($page['footer-1']); ?>
+	     <div class="col-md-12">
+        <?php print render($page['footer-top']); ?>
       </div>
-	  <div class="col-md-3">
-        <?php print render($page['footer-2']); ?>
-      </div>
-	  <div class="col-md-3">
-        <?php print render($page['footer-3']); ?>
-      </div>
-	  <div class="col-md-3">
-        <?php print render($page['footer-4']); ?>
+    </div>
+    <div class="row">
+	     <div class="col-md-12">
+        <?php print render($page['footer-bottom']); ?>
       </div>
     </div>
   </div>

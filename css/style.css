@@ -912,7 +912,6 @@ a.anchor {
   margin-top:0px;
   padding-bottom: 5px;
   padding-top: 25px;
-  height:100px;
   color:#ffffff;
 }
 .footer-start a {
@@ -929,7 +928,6 @@ a.anchor {
   margin-top:0px;
   padding-bottom: 5px;
   padding-top: 25px;
-  height:100px;
   color:#ffffff
 }
 .footer-entdecken a {
@@ -951,7 +949,6 @@ a.anchor {
   margin-top:0px;
   padding-bottom: 5px;
   padding-top: 25px;
-  height:100px;
   color:#ffffff;
 }
 .footer a {
@@ -962,6 +959,48 @@ a.anchor {
   text-transform:uppercase;
   font-weight:200;
 }
+
+#footer-menu-top li, #footer-menu-bottom li {
+  float:left;
+}
+
+#footer-menu-top li a, #footer-menu-bottom li a{
+  padding:10px 15px;
+  margin:10px 10px;
+}
+
+#footer-menu-top li a:hover, #footer-menu-bottom li a:hover{
+  text-decoration:underline;
+  background:none;
+}
+
+#footer-menu-top {
+  margin-top:20px;
+}
+#footer-menu-bottom{
+  border-top: 1px solid #ffffff;
+  margin-bottom: 90px;
+}
+
+.footer-top-menu-items{
+  float:left;
+}
+
+.social-icons {
+  float:right;
+}
+
+.footer-bottom-menu-items{
+  float:left;
+  margin-right:100px;
+}
+
+#footer-menu-bottom .copyright{
+  float:right;
+  margin-top:20px;
+  margin-right: 50px;
+}
+
 
 
 /**
