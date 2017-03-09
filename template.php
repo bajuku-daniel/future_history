@@ -74,7 +74,7 @@ function future_history_preprocess_page(&$variables) {
  * Remove some System messages we dont need
  */
 function future_history_preprocess_status_messages(&$variables) {
-  $remove_strings = array('Bild erfolgreich aus Sammlung entfernt','Eigene Bilder einstellen');
+  $remove_strings = array('Bild erfolgreich aus Sammlung entfernt','Eigene Bilder einstellen', 'Blogeintrag');
   if (!empty($_SESSION['messages']['status'])) {
     foreach ($_SESSION['messages']['status'] as $key => $message) {
       foreach ($remove_strings as $string) {

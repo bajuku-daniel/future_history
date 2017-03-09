@@ -1060,6 +1060,13 @@ a.anchor {
   padding: 5px !important;
 }
 
+
+.comment_forbidden {
+  display: block!important;
+  padding-top: 30px;
+  margin-left: 0;
+  padding-left: 0!important;
+}
 /**
 *  hide some fields
 */
