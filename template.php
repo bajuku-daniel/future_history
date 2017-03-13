@@ -68,21 +68,27 @@ function future_history_preprocess_page(&$variables) {
       $variables['theme_hook_suggestions'][] = 'page__' . $nodetype;
     }
   }
-  //echo '<pre>'; var_dump($variables['theme_hook_suggestions']); echo '</pre>';
 }
 
-//function future_history_preprocess_user_picture(&$variables) {
-  //change only the relevant part and leave the rest of the code
-  //For Drupal 7 imagecache is in core so I put the correct syntax
-
-/*
-  if (!array_key_exists('cid', $variables['account'])) {
-    if (empty($variables['account']['picture'])) {
-
-      $variables['user_picture'] = theme('image_style', array('style_name' => 'profile_avatar', 'path' => 'public://pictures/default.jpg', 'alt' => 'user picture', 'title' => 'user picture'));
+/**
+ * Remove some System messages we dont need
+ */
+function future_history_preprocess_status_messages(&$variables) {
+  $remove_strings = array('Bild erfolgreich aus Sammlung entfernt','Eigene Bilder einstellen', 'Blogeintrag');
+  if (!empty($_SESSION['messages']['status'])) {
+    foreach ($_SESSION['messages']['status'] as $key => $message) {
+      foreach ($remove_strings as $string) {
+        if(strpos($message, $string) !== FALSE) {
+          unset($_SESSION['messages']['status'][$key]);
+        }
+      }
+    }
+    // Remove the empty status message wrapper if no other messages have been set.
+    if (empty($_SESSION['messages']['status'])) {
+      unset($_SESSION['messages']['status']);
     }
   }
-}*/
+}
 
 function future_history_preprocess_node(&$variables) {
   $variables['messages'] = theme('status_messages');

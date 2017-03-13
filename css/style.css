@@ -50,7 +50,11 @@ h4 {
   margin-top: 30px;
 }
 
+/* Styles for the drupal boostrap message modal*/
 
+#bmm-modal .modal-body a.close{
+  display:none;
+}
 
 /* Styles for the flag_lists Touren View*/
 
@@ -76,8 +80,12 @@ vertical-align: middle;
   vertical-align:top;
 }
 
-#edit-data-table tr {
+#entry-order tr {
   height:130px;
+}
+
+#edit-data-table table{
+ border-collapse: initial;
 }
 
 #edit-data-table .tabledrag-toggle-weight-wrapper {
@@ -523,6 +531,67 @@ audio , .addthis_inline_share_toolbox {
   width:450px;
 }
 
+
+/* Style the "add-to-modal" (entdecken bereich screen)*/
+
+#entdecken-map-nav .modal-dialog {
+  padding-bottom: 30px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: 290px;
+  padding: 10px;
+  position: relative;
+  z-index: 1050;
+  margin-top: 220px;
+}
+
+
+#add-to-modal .modal-add-body ul li {
+  margin-left:40px;
+}
+
+#add-to-modal .modal-add-body a {
+  color: rgba(23, 88, 161, 1);
+}
+
+#add-to-modal .modal-add-body ul {
+  padding-left:0px;
+}
+
+#add-to-modal .modal-add-body ul li.bookmarks {
+    font-family: 'FontAwesome';
+    content: '&#xE413;';
+    margin:0 5px 0 -15px;
+}
+
+#add-to-modal .modal-add-body ul li {
+  background-image: url("../img/icon_tour.svg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 30px auto;
+  list-style: outside none none;
+  margin-top:20px;
+  cursor: default;
+}
+
+#add-to-modal .modal-add-body ul li#bookmarks {
+  background-image: url("../img/icon_bookmark.svg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 30px auto;
+  list-style: outside none none;
+  margin-top:20px;
+  cursor: default;
+}
+
+#add-to-modal .modal-add-body ul li a{
+  margin-left:40px;
+}
+
+#add-to-modal .modal-add-body .flag-message {
+  margin-left:40px;
+  width:450px;
+}
 /* kill some useless comment features */
 .comment-wrapper .comment_forbidden {
   display:none;
@@ -843,7 +912,6 @@ a.anchor {
   margin-top:0px;
   padding-bottom: 5px;
   padding-top: 25px;
-  height:100px;
   color:#ffffff;
 }
 .footer-start a {
@@ -860,7 +928,6 @@ a.anchor {
   margin-top:0px;
   padding-bottom: 5px;
   padding-top: 25px;
-  height:100px;
   color:#ffffff
 }
 .footer-entdecken a {
@@ -882,7 +949,6 @@ a.anchor {
   margin-top:0px;
   padding-bottom: 5px;
   padding-top: 25px;
-  height:100px;
   color:#ffffff;
 }
 .footer a {
@@ -893,6 +959,48 @@ a.anchor {
   text-transform:uppercase;
   font-weight:200;
 }
+
+#footer-menu-top li, #footer-menu-bottom li {
+  float:left;
+}
+
+#footer-menu-top li a, #footer-menu-bottom li a{
+  padding:10px 15px;
+  margin:10px 10px;
+}
+
+#footer-menu-top li a:hover, #footer-menu-bottom li a:hover{
+  text-decoration:underline;
+  background:none;
+}
+
+#footer-menu-top {
+  margin-top:20px;
+}
+#footer-menu-bottom{
+  border-top: 1px solid #ffffff;
+  margin-bottom: 90px;
+}
+
+.footer-top-menu-items{
+  float:left;
+}
+
+.social-icons {
+  float:right;
+}
+
+.footer-bottom-menu-items{
+  float:left;
+  margin-right:100px;
+}
+
+#footer-menu-bottom .copyright{
+  float:right;
+  margin-top:20px;
+  margin-right: 50px;
+}
+
 
 
 /**
@@ -952,6 +1060,13 @@ a.anchor {
   padding: 5px !important;
 }
 
+
+.comment_forbidden {
+  display: block!important;
+  padding-top: 30px;
+  margin-left: 0;
+  padding-left: 0!important;
+}
 /**
 *  hide some fields
 */

@@ -251,7 +251,7 @@
         </div>
 
         <div class="col-md-10 col-md-offset-1">
-          <h4>Satelitenansicht</h4>
+          <h4>Satellitenansicht</h4>
           <input type="hidden" id="ansicht_lat" value="<?php print($content['field_position_der_aufnahme']['0']['lat']);?>">
           <input type="hidden" id="ansicht_lng" value="<?php print($content['field_position_der_aufnahme']['0']['lng']);?>">
           <input type="hidden" id="ansicht_direction" value="<?php print($content['field_position_der_aufnahme']['0']['view_direction']);?>">
