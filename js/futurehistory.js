@@ -14,6 +14,27 @@
     new google.maps.Point(12, 12) //anchor point
   );
 
+
+  jQuery(document).ready(function () {
+    // clickhandler sets cookie to reinitialize previous map/filter settings
+    // TODO: check URL via config e.g. multilanguage case
+    $(".node-type-ansicht .ansicht-back-to-map").click(function (e) {
+      var referrer = document.referrer;
+
+      if ((referrer.indexOf("fh-entdecken-map") !== -1)) {
+        var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
+        console.log(cookie_data);
+        if((cookie_data) && (cookie_data.initializeOnPageLoad !== 'undefined' || cookie_data.initializeOnPageLoad !== null)){
+          cookie_data.initializeOnPageLoad = true;
+          $.cookie('fh_state_cookie', JSON.stringify(cookie_data), {path: '/'});
+          var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
+          console.log(cookie_data);
+        }
+      }
+    });
+  });
+
+
   //Start drupal behaviors
   Drupal.behaviors.futurehistoryDetails = {
     attach: function (context, settings) {
