@@ -17,9 +17,12 @@
   jQuery(document).ready(function () {
     // clickhandler sets cookie to reinitialize previous map/filter settings
     // TODO: check URL via config e.g. multilanguage case
-    $(".node-type-ansicht .ansicht-back-to-map").click(function (e) {
-      var referrer = document.referrer;
 
+    // needed to activate popstate listening
+    history.pushState({}, '', window.location);
+
+    var initializeOnPageLoadCookieCheck = function() {
+      var referrer = document.referrer;
       if ((referrer.indexOf("fh-entdecken-map") !== -1)) {
         var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
         console.log(cookie_data);
@@ -30,7 +33,18 @@
           console.log(cookie_data);
         }
       }
+      window.history.back();
+    };
+
+    $(".node-type-ansicht .ansicht-back-to-map").click(function (e) {
+      initializeOnPageLoadCookieCheck();
     });
+
+    $(window).on('popstate', function (e) {
+      initializeOnPageLoadCookieCheck();
+    });
+
+
   });
 
   var tour_url = '/de/fh_view/list_tour_content';
@@ -40,7 +54,10 @@
 
   var maxTourDistance = 10000;
 
-  function showTourOnMap(tour_id='14',tourname="") {
+  function showTourOnMap(tour_id,tourname) {
+      tour_id = typeof tour_id !== 'undefined' ? tour_id : '14';
+      tourname = typeof tourname !== 'undefined' ? tourname : '';
+
     // start the ajax request to get tour details
     $.ajax({
       url: tour_url,
