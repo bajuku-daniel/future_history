@@ -14,7 +14,7 @@
     new google.maps.Point(12, 12) //anchor point
   );
 
-  jQuery(document).ready(function () {
+  jQuery(".node-type-ansicht .ansicht-back-to-map").ready(function () {
     // clickhandler sets cookie to reinitialize previous map/filter settings
     // TODO: check URL via config e.g. multilanguage case
 
