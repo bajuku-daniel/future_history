@@ -14,38 +14,38 @@
     new google.maps.Point(12, 12) //anchor point
   );
 
-  jQuery(".node-type-ansicht .ansicht-back-to-map").ready(function () {
-    // clickhandler sets cookie to reinitialize previous map/filter settings
-    // TODO: check URL via config e.g. multilanguage case
+    jQuery(document).ready(function () {
+        if ($(".node-type-ansicht .ansicht-back-to-map").size() > 0) {
+            // clickhandler sets cookie to reinitialize previous map/filter settings
+            // TODO: check URL via config e.g. multilanguage case
+            // needed to activate popstate listening
+            history.pushState({}, '', window.location);
 
-    // needed to activate popstate listening
-    history.pushState({}, '', window.location);
+            var initializeOnPageLoadCookieCheck = function () {
+                var referrer = document.referrer;
+                if ((referrer.indexOf("fh-entdecken-map") !== -1)) {
+                    var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
+                    console.log(cookie_data);
+                    if ((cookie_data) && (cookie_data.initializeOnPageLoad !== 'undefined' || cookie_data.initializeOnPageLoad !== null)) {
+                        cookie_data.initializeOnPageLoad = true;
+                        $.cookie('fh_state_cookie', JSON.stringify(cookie_data), {path: '/'});
+                        var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
+                        console.log(cookie_data);
+                    }
+                }
+                window.history.back();
+            };
 
-    var initializeOnPageLoadCookieCheck = function() {
-      var referrer = document.referrer;
-      if ((referrer.indexOf("fh-entdecken-map") !== -1)) {
-        var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
-        console.log(cookie_data);
-        if((cookie_data) && (cookie_data.initializeOnPageLoad !== 'undefined' || cookie_data.initializeOnPageLoad !== null)){
-          cookie_data.initializeOnPageLoad = true;
-          $.cookie('fh_state_cookie', JSON.stringify(cookie_data), {path: '/'});
-          var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
-          console.log(cookie_data);
+            $(".node-type-ansicht .ansicht-back-to-map").click(function (e) {
+                initializeOnPageLoadCookieCheck();
+            });
+
+            $(window).on('popstate', function (e) {
+                initializeOnPageLoadCookieCheck();
+            });
+
         }
-      }
-      window.history.back();
-    };
-
-    $(".node-type-ansicht .ansicht-back-to-map").click(function (e) {
-      initializeOnPageLoadCookieCheck();
     });
-
-    $(window).on('popstate', function (e) {
-      initializeOnPageLoadCookieCheck();
-    });
-
-
-  });
 
   var tour_url = '/de/fh_view/list_tour_content';
   var pois_by_nid = [];
