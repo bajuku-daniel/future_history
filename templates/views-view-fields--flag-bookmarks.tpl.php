@@ -29,7 +29,7 @@ $R = 0;
             </a>
             <div class="overlay-link-spacer"></div>
                <a
-              href="node/<?php print $myvars['nid'] ?>/delete?destination=<?php print $_GET['q'] ?>"
+              href="<?php print $myvars['unflag'] ?>"
               title="Bild löschen" class="flag unflag-action flag-link-normal"
               rel="nofollow">
               <div class="icon">

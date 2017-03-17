@@ -28,6 +28,7 @@ $R = 0;
               <div class="icon-text"><?php print t('Details'); ?></div>
             </a>
             <div class="overlay-link-spacer"></div>
+
             <a
               href="/node/<?php print $myvars['nid'] ?>/edit?destination=<?php print $_GET['q'] ?>"
               title="Bild bearbeiten"
@@ -40,8 +41,10 @@ $R = 0;
               </div>
             </a>
             <div class="overlay-link-spacer"></div>
+
+
             <a
-              href="node/<?php print $myvars['nid'] ?>/delete?destination=<?php print $_GET['q'] ?>"
+              href="/node/<?php print $myvars['nid'] ?>/delete?destination=<?php print $_GET['q'] ?>"
               title="Bild löschen" class="flag unflag-action flag-link-normal"
               rel="nofollow">
               <div class="icon">
