@@ -1077,3 +1077,268 @@ a.anchor {
 #edit-field-bild-und-0-upload-button, #edit-field-bild-overlay-und-0-upload-button, #edit-field-audio-datei-und-0-upload-button{
   display:none;
 }
+
+
+
+/**
+OVERLAY STYLES
+**/
+
+
+
+.title_year {
+
+  position:absolute;
+  min-width: 320px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  font-weight: 400;
+  font-size: 1.2em;
+
+}
+
+
+.title-tour {
+
+
+  min-width: 320px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  font-weight: 400;
+  font-size: 1.2em;
+  height: 20px;
+
+}
+
+
+div.views-field.views-field-title {
+
+  padding-left: 5px;
+  float:left;
+  height: 20px;
+
+
+}
+
+div.views-field.views-field-field-jahr {
+
+  float:left;
+  padding-left: 5px;
+  height: 20px;
+
+}
+
+
+
+
+
+#separator:after {
+  content: "|";
+  float:left;
+  padding-left: 5px;
+}
+
+
+#picture-upload-date {
+  float:left;
+  padding-left: 5px;
+}
+
+
+
+.overlay-container {
+  position: absolute;
+  margin-top: -176px;
+  overflow: hidden;
+  height: 154px;
+  min-width: 320px;
+  z-index:99999;
+
+}
+
+
+.overlay-container-touren {
+  position: absolute;
+  margin-top: -170px;
+  overflow: hidden;
+  height: 170px;
+  min-width: 320px;
+  z-index:99999;
+
+}
+
+.overlay-container-eigenebilder {
+  position: absolute;
+  margin-top: -175px;
+  overflow: hidden;
+  height: 155px;
+  min-width: 320px;
+  z-index:99999;
+
+}
+
+
+.overlay {
+  height: 154px;
+  width: 100%;
+  position:absolute;
+  background: rgba(48, 66, 155, 0.7);
+  transition: opacity 1s, transform 1s;
+  opacity: 0;
+}
+
+.overlay-touren {
+  height: 170px;
+  width: 100%;
+  position:absolute;
+  background: rgba(48, 66, 155, 0.7);
+  transition: opacity 1s, transform 1s;
+  opacity: 0;
+}
+
+.overlay-eigenebilder {
+  height: 153px;
+  width: 100%;
+  position:absolute;
+  background: rgba(48, 66, 155, 0.7);
+  transition: opacity 1s, transform 1s;
+  opacity: 0;
+}
+
+
+.overlay-container:hover .overlay, .overlay-container-touren:hover .overlay-touren,
+.overlay-container-eigenebilder:hover .overlay-eigenebilder {
+  opacity:1;
+}
+
+
+
+.overlay-inner {
+
+  color: #fff;
+  padding-left: 10%;
+  padding-top: 10%;
+  font-size: 1.2em;
+  font-weight: 400;
+
+
+}
+
+
+.overlay-eigenebilder > .overlay-inner {
+
+  color: #fff;
+  padding-left: 10%;
+  padding-top: 7%;
+  font-size: 1.2em;
+  font-weight: 400;
+
+
+
+}
+
+
+.overlay-inner a, .overlay-inner a:link  {
+
+  color: #fff;
+  display:block;
+
+}
+
+
+
+.overlay-link-spacer {
+  height: 10px;
+  clear:both;
+}
+
+
+.material-icons {
+  vertical-align:middle;
+}
+
+.icon {
+
+  width: 30px;
+  text-align:center;
+  display: inline-block;
+  float:left;
+}
+
+.icon-text {
+
+  display: inline-block;
+  float:left;
+}
+
+div.views-field.views-field-tour-distance > span.field-content:after {
+  content: " m";
+}
+
+div.views-field.views-field-period-start > span.field-content:after{
+  content: " - "
+}
+
+div.views-field.views-field-period-start, div.views-field.views-field-period-end,
+div.views-field.views-field-period-end > span  {
+  display: inline-block!important;
+}
+
+.rslides {
+  width: 320px;
+  height: 170px;
+  padding:0;
+  margin:0;
+  overflow:hidden;
+
+}
+
+
+.rslides ul {
+
+  padding:0;
+  margin:0;
+}
+
+.rslides li {
+
+  padding:0;
+  margin:0!important;
+  width: 320px!important;
+  height: 170px!important;
+  overflow:hidden;
+}
+
+div.views-field.views-field-tour-distance,
+div.views-field.views-field-period-start,
+div.views-field.views-field-period-end {
+  display: inline-block;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+
+div.views-field.views-field-tour-distance:after {
+  content: " | ";
+}
+
+
+div.views-field.views-field-description {
+  height: 230px!important;
+  overflow: hidden;
+
+}
+
+.text-end {
+  height: 30px;
+  min-width: 320px;
+  position: absolute;
+  margin-top:200px;
+  background-image: url('text-end.png');
+
+
+}
+
+/**
+OVERLAY STYLES END
+**/
