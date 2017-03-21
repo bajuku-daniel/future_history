@@ -150,7 +150,7 @@
             <i class="material-icons">info</i><a href="#infos" class="ansicht-info-button"> Infos</a>
           </div>
           <div class="col-md-2 col-md-offset-1 ansicht-back-to-map">
-            <i class="material-icons">keyboard_arrow_left</i><a href="/fh-entdecken-map" class="ansicht-back-button"> Zurück zur Karte</a>
+            <i class="material-icons">keyboard_arrow_left</i><a href="/fh-entdecken-map" class="ansicht-back-button"> Zur Karte</a>
           </div>
         </div>
       </div>

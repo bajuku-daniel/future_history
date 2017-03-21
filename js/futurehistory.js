@@ -21,19 +21,25 @@
             // needed to activate popstate listening
             history.pushState({}, '', window.location);
 
+
+          if($('#ansicht_lat').val()){
+            var url_update = "/de/fh-entdecken-map?y="+$('#ansicht_lat').val()+"&x="+$('#ansicht_lng').val()+"&z=18&k=&d=1644--2016&a=all&s=dist";
+            $(".ansicht-back-button").attr("href",url_update);
+          }
+
             var initializeOnPageLoadCookieCheck = function () {
                 var referrer = document.referrer;
                 if ((referrer.indexOf("fh-entdecken-map") !== -1)) {
                     var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
-                    console.log(cookie_data);
+
                     if ((cookie_data) && (cookie_data.initializeOnPageLoad !== 'undefined' || cookie_data.initializeOnPageLoad !== null)) {
                         cookie_data.initializeOnPageLoad = true;
                         $.cookie('fh_state_cookie', JSON.stringify(cookie_data), {path: '/'});
                         var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
                         console.log(cookie_data);
                     }
+                  window.history.back();
                 }
-                window.history.back();
             };
 
             $(".node-type-ansicht .ansicht-back-to-map").click(function (e) {
