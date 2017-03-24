@@ -33,22 +33,7 @@
 <div class="container container-ansichten">
   <div class="row">
 
-    <h4> <?php print(t('Meine Sammlung')); ?>  </h4>
-    <?php if ($exposed): ?>
-      <div class="view-exposed">
-        <?php print $exposed; ?>
-        <div class="addAnsichtButtons">
-          <!--   http://future-history.develnet/de/fh-entdecken-map?y=50.385593024934245&x=11.724108814013666&z=7&k=&d=1644--2016&a=13&s=dist   -->
-          <a href="/de/fh-entdecken-map?y=51.31491849367987&x=9.460614849999956&z=6&k=&d=1644--2016&s=dist&a=all&suid=<?php print $user->uid ?>" class="btn btn-primary btnNext">Auf Karte anzeigen</a>
-
-        </div>
-      </div>
-    <?php endif; ?>
-    <?php if (isset($empty)): ?>
-      <div class="view-empty">
-        <?php print $empty; ?>
-      </div>
-    <?php endif; ?>
+    <h4> <?php print(t('MEINE TOUREN')); ?>  </h4>
 
 
   </div>
@@ -60,8 +45,7 @@
   <div class="<?php print $classes; ?>">
     <?php if ($rows): ?>
       <div class="view-content">
-        <?php print $rows;
-        ?>
+        <?php print $rows; ?>
       </div>
     <?php endif; ?>
   </div><?php /* class view */ ?>
