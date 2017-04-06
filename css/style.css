@@ -1342,3 +1342,7 @@ div.views-field.views-field-description {
 /**
 OVERLAY STYLES END
 **/
+
+.container-ansichten .view-empty h4{
+  display: none;
+}

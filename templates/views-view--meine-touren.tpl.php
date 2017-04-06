@@ -34,9 +34,14 @@
   <div class="row">
 
     <h4> <?php print(t('MEINE TOUREN')); ?>  </h4>
-
+    <?php if (isset($empty)): ?>
+      <div class="view-empty">
+        <?php print $empty; ?>
+      </div>
+    <?php endif; ?>
 
   </div>
+
 </div>
 
 <div class="container-fluid">

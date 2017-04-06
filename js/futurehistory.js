@@ -57,12 +57,12 @@
         var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
         var requestDate = "1644--2016";
         if ((cookie_data.RequestDate)) {
-          requestDate = cookie_data.RequestDate;
+          // requestDate = cookie_data.RequestDate;
         }
 
-        var zoom = "18";
+        var zoom = "15";
         if ((cookie_data.zoom)) {
-          zoom = cookie_data.zoom;
+          // zoom = cookie_data.zoom;
         }
         var url_update = "/de/fh-entdecken-map?y=" + $('#ansicht_lat').val() + "&x=" + $('#ansicht_lng').val() + "&z=" + zoom + "&k=&d=" + requestDate + "&a=all&s=dist";
         $(".ansicht-back-button").attr("href", url_update);
@@ -76,10 +76,6 @@
 
 
       $(window).on('popstate', function (e) {
-
-        console.log("popstate HANDLER");
-        console.log(e.originalEvent.state);
-        // alert("popstate");
         // check - null for anchor links | object for history
         if (null !== e.originalEvent.state) {
           initializeOnPageLoadCookieCheck();

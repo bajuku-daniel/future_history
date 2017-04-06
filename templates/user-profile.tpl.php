@@ -35,25 +35,87 @@
  */
 
 global $user;
-  $currentUser = $user->uid;
-  //get profile url for that you can use $user_id as user id
-  $profileUrl = arg(1);
-  // compare usernames to determine whether the user is on their own profile.
-  if($currentUser == $profileUrl) {
-    //user is on their profile, display link
-    $myAccount = 1;
-  }
-  else {
-    $myAccount = 0;
-  }
-
+$currentUser = $user->uid;
+//get profile url for that you can use $user_id as user id
+$profileUrl = arg(1);
+// compare usernames to determine whether the user is on their own profile.
+if ($currentUser == $profileUrl) {
+  //user is on their profile, display link
+  $myAccount = 1;
+}
+else {
+  $myAccount = 0;
+}
+$R = 0;
 ?>
-<h4>Benutzer Informationen</h4>
-<div class="profile"<?php print $attributes; ?>>
-  <?php print render($user_profile); ?>
+
+
+<div class="row">
+
+  <div class="col-sm-12 ">
+    <div class="sidebar-module sidebar-module-inset">
+      <?php if ($myAccount): ?>
+        <a class="btn btn-default profile-edit-button"
+           href="/user/<?php print($currentUser); ?>/edit?destination=<?php print $_GET['q'] ?>">Profils
+          Bearbeiten </a>
+      <?php endif ?>
+    </div>
+
+  </div>
 </div>
 
-<?php if ($myAccount): ?>
-  <a class="btn btn-default profile-edit-button" href="/user/<?php print($currentUser); ?>/edit">Profil Bearbeiten </a>
-<?php endif ?>
+<div class="row">
+  <div class="col-sm-12 blog-main">
+    <h4>Profil</h4>
+    <div class="blog-post">
+
+      <div class="picture"><?php print render($user_picture); ?></div>
+      <div class="name"><?php print render($user_name); ?></div>
+      <div
+        class="info"><?php print $total_bilder . ' | ' . $total_touren ?></div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 ">
+    <? if (!empty($user_interessts)): ?>
+        <span><b>Interessen</b></br>
+        <?php print $user_interessts; ?></span></br>
+    <? endif ?>
+    <? if (!empty($user_about)): ?>
+      <span> <b>Über mich</b></br>
+        <?php print $user_about; ?></span>
+    <? endif ?>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 ">
+    <div class="blog-post">
+      <h4>Benutzer Aktivität</h4>
+      <?php print $user_activity; ?>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 blog-main">
+    <div class="blog-post">
+      <h4>Die letzten Ansichten</h4>
+      <?php print $user_last_views; ?>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 blog-main">
+    <div class="blog-post">
+      <h4>Die letzten Touren</h4>
+      <?php print $user_tours_views; ?>
+    </div>
+  </div>
+</div>
+
+
+
+
 
