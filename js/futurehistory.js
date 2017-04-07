@@ -11,7 +11,7 @@
                 } catch (err) {
 
                 }
-  
+
                 var referrer = document.referrer;
                 if ((referrer.indexOf("fh-entdecken-map") !== -1)) {
                     var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
