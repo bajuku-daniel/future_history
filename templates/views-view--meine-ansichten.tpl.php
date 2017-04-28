@@ -1,7 +1,6 @@
 <?php
 
 
-
 /**
  * @file
  * Main view template.
@@ -38,8 +37,9 @@
       <div class="view-exposed">
         <?php print $exposed; ?>
         <div class="addAnsichtButtons">
-<!--   http://future-history.develnet/de/fh-entdecken-map?y=50.385593024934245&x=11.724108814013666&z=7&k=&d=1644--2016&a=13&s=dist   -->
-          <a href="/de/fh-entdecken-map?y=51.31491849367987&x=9.460614849999956&z=6&k=&d=1644--2016&s=dist&a=<?php print $user->uid ?>" class="btn btn-primary btnNext">Auf Karte anzeigen</a>
+          <a
+            href="/de/fh-entdecken-map?y=51.31491849367987&x=9.460614849999956&z=6&k=&d=1644--2016&s=dist&a=<?php print $user->uid ?>"
+            class="btn btn-primary btnNext">Auf Karte anzeigen</a>
         </div>
       </div>
     <?php endif; ?>
@@ -54,16 +54,26 @@
 </div>
 
 <div class="container-fluid">
-<div class="row-fluid">
-  <div class="col-sm-12">
-  <div class="<?php print $classes; ?>">
-    <?php if ($rows): ?>
-      <div class="view-content">
-        <?php print $rows; ?>
+  <div class="row-fluid">
+    <div class="col-sm-12">
+      <div class="<?php print $classes; ?>">
+        <?php if ($rows): ?>
+          <div class="view-content">
+            <?php print $rows; ?>
+          </div>
+
+        <?php endif; ?>
+
       </div>
-    <?php endif; ?>
-  </div><?php /* class view */ ?>
-</div>
+
+    </div>
+    </br>
+
+
+  </div>
+
 </div>
 
+<div class="pager wrapper">
+  <?php print $pager ?>
 </div>

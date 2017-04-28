@@ -39,9 +39,7 @@
         <?php print $empty; ?>
       </div>
     <?php endif; ?>
-
   </div>
-
 </div>
 
 <div class="container-fluid">
@@ -53,8 +51,11 @@
         <?php print $rows; ?>
       </div>
     <?php endif; ?>
-  </div><?php /* class view */ ?>
+  </div>
+    <?php print $pager ?>
+
 </div>
+
 </div>
 
 </div>

@@ -33,7 +33,7 @@
 <div class="container container-ansichten">
   <div class="row">
 
-    <h4> <?php print(t('Meine Sammlung')); ?>  </h4>
+    <h4><?php print(t('Meine Sammlung')); ?></h4>
     <?php if ($exposed): ?>
       <div class="view-exposed">
         <?php print $exposed; ?>
