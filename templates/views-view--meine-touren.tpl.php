@@ -1,7 +1,6 @@
 <?php
 
 
-
 /**
  * @file
  * Main view template.
@@ -43,19 +42,22 @@
 </div>
 
 <div class="container-fluid">
-<div class="row-fluid">
-  <div class="col-sm-12">
-  <div class="<?php print $classes; ?>">
-    <?php if ($rows): ?>
-      <div class="view-content">
-        <?php print $rows; ?>
+  <div class="row-fluid">
+    <div class="col-sm-12">
+      <div class="<?php print $classes; ?>">
+        <?php if ($rows): ?>
+          <div class="view-content">
+            <?php print $rows; ?>
+          </div>
+        <?php endif; ?>
       </div>
-    <?php endif; ?>
+
+
+    </div>
+
   </div>
-    <?php print $pager ?>
 
 </div>
-
-</div>
-
+<div class="pager wrapper">
+  <?php print $pager ?>
 </div>
