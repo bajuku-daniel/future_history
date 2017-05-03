@@ -1,6 +1,24 @@
 (function ($) {
     $(function () {
+        var cookie_data = [];
+
+        function nextItem(i,arr) {
+            i = i + 1; // increase i by one
+            i = i % arr.length; // if we've gone too high, start from `0` again
+            return arr[i]; // give us back the item of where we are now
+        }
+
+        function prevItem(i,arr) {
+            if (i === 0) { // i would become 0
+                i = arr.length; // so put it at the other end of the array
+            }
+            i = i - 1; // decrease by one
+            return arr[i]; // give us back the item of where we are now
+        }
+
         function initialize() {
+            cookie_data = JSON.parse($.cookie("fh_state_cookie"));
+
             if ($(".node-type-ansicht .ansicht-back-to-map").size() > 0) {
                 // clickhandler sets cookie to reinitialize previous map/filter settings
                 // TODO: check URL via config e.g. multilanguage case
@@ -11,25 +29,35 @@
                 } catch (err) {}
 
                 var referrer = document.referrer;
+
                 if ((referrer.indexOf("fh-entdecken-map") !== -1)) {
-                    var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
                     if ((cookie_data) && (cookie_data.initializeOnPageLoad !== 'undefined' || cookie_data.initializeOnPageLoad !== null)) {
                         cookie_data.initializeOnPageLoad = true;
                         $.cookie('fh_state_cookie', JSON.stringify(cookie_data), {path: '/'});
-                        var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
-                        console.log(cookie_data);
+                        cookie_data = JSON.parse($.cookie("fh_state_cookie"));
                     }
                 }
 
                 // update URL of "Zur Karte" button only if referrer is NOT map
                 var origin = document.referrer;
                 if ($('#ansicht_lat').val() && (origin.indexOf("fh-entdecken-map") === -1)) {
-                    var cookie_data = JSON.parse($.cookie("fh_state_cookie"));
                     var requestDate = "1644--2016";
                     var zoom = "15";
                     var url_update = "/de/fh-entdecken-map?y=" + $('#ansicht_lat').val() + "&x=" + $('#ansicht_lng').val() + "&z=" + zoom + "&k=&d=" + requestDate + "&a=all&s=dist";
                     $(".ansicht-back-button").attr("href", url_update);
                 }
+            }
+
+            var currentNid = window.location.href.split("/");
+            currentNid = currentNid.slice(-1)[0];
+            var currentIndex = cookie_data.lastResults.indexOf(currentNid);
+            var nextNid = nextItem(currentIndex,cookie_data.lastResults);
+            var prevNid = prevItem(currentIndex,cookie_data.lastResults);
+
+            if($.isNumeric( nextNid ) && $.isNumeric( prevNid )){
+                $(".count").text((currentIndex+1)+"/"+(cookie_data.lastResults.length+1));
+                $(".prev-button").removeClass('hidden').attr("href", "/node/"+prevItem(currentIndex,cookie_data.lastResults));
+                $(".next-button").removeClass('hidden').attr("href", "/node/"+nextItem(currentIndex,cookie_data.lastResults));
             }
         }
 

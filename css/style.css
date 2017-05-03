@@ -1385,3 +1385,44 @@ USER PROFILE
 .pager.wrapper{
   clear: both;
 }
+
+
+
+
+.media-body {
+  width:100%;
+}
+.media-left, .media-right {
+  vertical-align: middle;
+}
+.arrow-left img, .arrow-right img {
+  width:27px;
+}
+.arrow-left, .arrow-right {
+  padding:5px;}
+
+.newsNavigation a {
+  color:#fff;
+}
+.media-left{
+  float: left;
+}
+.media-right{
+  float: right;
+}
+
+.ansicht-info a.prev-button,.ansicht-info a.next-button,.count{
+  display:inline;
+  padding:0;
+}
+
+.count{
+  padding: 0 10px 0 10px;
+}
+.ansicht-info a.prev-button i{
+  left: -10px;
+}
+
+.prevnext.ansicht-info{
+  float: right;
+}

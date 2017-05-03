@@ -8,9 +8,38 @@
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
     <div class="row ansicht-picture">
+
+
+<!--      <div class="container hidden">
+        <div class="row newsNavigation">
+          <a href="#">
+            <div class="col-md-5 col-md-offset-1 col-centered">
+              <div class="media previousNews">
+                <div class="media-left arrow-left">
+                  <img class="media-object" src="http://imgh.us/left-arrow.svg" alt="..." style="">
+                </div>
+
+
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="col-md-5">
+              <div class="media nextNews">
+                <div class="media-right arrow-right">
+                  <img class="media-object" src="http://imgh.us/right-arrow_1.svg" alt="..." style="">
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>-->
+
+
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1 col-centered">
+
             <?php if (!empty($content['field_bild_overlay'])): ?>
               <?php
               $overlay_image_style =  $content['field_bild_overlay']['0']['#image_style'];
@@ -151,6 +180,11 @@
           </div>
           <div class="col-md-2 col-md-offset-1 ansicht-back-to-map">
             <i class="material-icons">keyboard_arrow_left</i><a href="/fh-entdecken-map" class="ansicht-back-button"> Zur Karte</a>
+          </div>
+          <div class="col-md-2 prevnext ansicht-info">
+            <a href="#prev" class="prev-button hidden"><i class="material-icons">keyboard_arrow_left</i> prev</a>
+            <div class="count"></div>
+            <a href="#next" class="next-button hidden">next <i class="material-icons">keyboard_arrow_right</i></a>
           </div>
         </div>
       </div>
