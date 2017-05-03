@@ -50,14 +50,16 @@
 
             var currentNid = window.location.href.split("/");
             currentNid = currentNid.slice(-1)[0];
-            var currentIndex = cookie_data.lastResults.indexOf(currentNid);
-            var nextNid = nextItem(currentIndex,cookie_data.lastResults);
-            var prevNid = prevItem(currentIndex,cookie_data.lastResults);
+            if (typeof cookie_data.lastResults !== 'undefined') {
+                var currentIndex = cookie_data.lastResults.indexOf(currentNid);
+                var nextNid = nextItem(currentIndex, cookie_data.lastResults);
+                var prevNid = prevItem(currentIndex, cookie_data.lastResults);
 
-            if($.isNumeric( nextNid ) && $.isNumeric( prevNid )){
-                $(".count").text((currentIndex+1)+"/"+(cookie_data.lastResults.length+1));
-                $(".prev-button").removeClass('hidden').attr("href", "/node/"+prevItem(currentIndex,cookie_data.lastResults));
-                $(".next-button").removeClass('hidden').attr("href", "/node/"+nextItem(currentIndex,cookie_data.lastResults));
+                if ($.isNumeric(nextNid) && $.isNumeric(prevNid)) {
+                    $(".count").text((currentIndex + 1) + "/" + (cookie_data.lastResults.length + 1));
+                    $(".prev-button").removeClass('hidden').attr("href", "/node/" + prevItem(currentIndex, cookie_data.lastResults));
+                    $(".next-button").removeClass('hidden').attr("href", "/node/" + nextItem(currentIndex, cookie_data.lastResults));
+                }
             }
         }
 
