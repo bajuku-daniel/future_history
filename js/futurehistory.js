@@ -56,7 +56,7 @@
                 var prevNid = prevItem(currentIndex, cookie_data.lastResults);
 
                 if ($.isNumeric(nextNid) && $.isNumeric(prevNid)) {
-                    $(".count").text((currentIndex + 1) + "/" + (cookie_data.lastResults.length + 1));
+                    $(".count").text((currentIndex + 1) + "/" + (cookie_data.lastResults.length));
                     $(".prev-button").removeClass('hidden').attr("href", "/node/" + prevItem(currentIndex, cookie_data.lastResults));
                     $(".next-button").removeClass('hidden').attr("href", "/node/" + nextItem(currentIndex, cookie_data.lastResults));
                 }

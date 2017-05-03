@@ -32,7 +32,7 @@
   <!------- SPACER --> <div class="overlay-link-spacer"></div>
 
   <?php
-  $tour=implode(",",[$row->fid,$row->flag_lists_flags_title,$row->flag_lists_flags_tour_distance]);
+  $tour=implode(",",[$row->fid,str_replace(","," ",$row->flag_lists_flags_title),$row->flag_lists_flags_tour_distance]);
   $url = "/de/fh-entdecken-map?y=51.31491849367987&x=9.460614849999956&z=6&k=&d=1644--2016&s=dist&a=all&t=".$tour;
   ?>
   <a
