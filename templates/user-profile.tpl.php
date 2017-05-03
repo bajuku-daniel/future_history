@@ -49,43 +49,46 @@ else {
 $R = 0;
 ?>
 
+<div class="container">
+  <div class="row PROFILE_TPL">
+    <div class="col-sm-12 blog-main">
+      <h4>Profil</h4>
+      <div class="blog-post profil">
 
-
-
-<div class="row">
-  <div class="col-sm-12 blog-main">
-    <h4>Profil</h4>
-    <div class="blog-post profil">
-
-      <div class="picture circular"><?php print $user_profile['user_picture']['#markup']; ?></div>
-      <div class="name"><?php print render($user_name); ?>
-        <?php if ($myAccount): ?>
-          <a class="btn btn-default profile-edit-button"
-             href="/user/<?php print($currentUser); ?>/edit?destination=<?php print $_GET['q'] ?>">Profil
-            Bearbeiten </a>
-        <?php endif ?></div>
-      <div
-        class="info"><?php print $total_bilder . ' | ' . $total_touren ?></div>
+        <div
+          class="picture circular"><?php print $user_profile['user_picture']['#markup']; ?></div>
+        <div class="name"><?php print render($user_name); ?>
+          <?php if ($myAccount): ?>
+            <a class="btn btn-default profile-edit-button"
+               href="/user/<?php print($currentUser); ?>/edit?destination=<?php print $_GET['q'] ?>">Profil
+              Bearbeiten </a>
+          <?php endif ?></div>
+        <div
+          class="info"><?php print $total_bilder . ' | ' . $total_touren ?></div>
+      </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-sm-12 ">
-    <?php if (!empty(trim($user_interessts))): ?>
-      </br></br><span><b>Interessen</b></br>
-        <?php print $user_interessts; ?></span></br>
-    <?php endif ?>
-    <?php if (!empty($user_about)): ?>
-      </br></br><span> <b>Über mich</b></br>
-        <?php print $user_about; ?></span>
-    <?php endif ?>
+
+  <div class="row PROFILE_TPL">
+    <div class="col-sm-12 ">
+      <?php if (!empty(trim($user_interessts))): ?>
+        </br></br><span><b>Interessen</b></br>
+          <?php print $user_interessts; ?></span></br>
+      <?php endif ?>
+      <?php if (!empty($user_about)): ?>
+        </br></br><span> <b>Über mich</b></br>
+          <?php print $user_about; ?></span>
+      <?php endif ?>
+    </div>
   </div>
+
+
 </div>
 
 <?php if (!empty($user_activity)): ?>
-  <div class="row">
+  <div class="row PROFILE_TPL_activity">
     <div class="col-sm-12 ">
-      <div class="blog-post">
+      <div class="blog-post activity">
         <h4>Benutzer Aktivität</h4>
         <?php print $user_activity; ?>
       </div>
@@ -93,27 +96,31 @@ $R = 0;
   </div>
 <?php endif ?>
 
-<?php if((int)$user_last_views_total > 0): ?>
-<div class="row">
-  <div class="col-sm-12 blog-main">
-    <div class="blog-post">
-      <?php print $user_last_views; ?>
+<?php if ((int) $user_last_views_total > 0): ?>
+
+  <div class="container-fluid fill">
+    <div class="row PROFILE_TPL_ansichten">
+      <div class="col-sm-12 blog-main ansichten">
+        <div class="blog-post">
+          <?php print $user_last_views; ?>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 <?php endif; ?>
 
-<?php if((int)$user_tours_views_total > 0): ?>
-<div class="row">
-  <div class="col-sm-12 blog-main">
-    <div class="blog-post">
-      <?php print $user_tours_views; ?>
+<?php if ((int) $user_tours_views_total > 0): ?>
+  <div class="container-fluid fill">
+    <div class="row PROFILE_TPL_touren">
+      <div class="col-sm-12 blog-main touren">
+        <div class="blog-post">
+          <?php print $user_tours_views; ?>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
 <?php endif; ?>
-
 
 
 

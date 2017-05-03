@@ -41,38 +41,24 @@ $R = 0;
               <div class="icon-text"><?php print t('Details'); ?></div>
             </a>
 
-       <?php if($myAccount == 1): ?>
+
+       <?php
+         $url = url('fh-entdecken-map', array('query' => array('y' => $variables['myvars']['lat'], 'x' => $variables['myvars']['lng'], 'z' => '15', 'k' => '', 'd' => '1644--2016', 'a' => 'all', 's' => 'dist')));
+         ?>
             <div class="overlay-link-spacer"></div>
 
             <a
-              href="/node/<?php print $myvars['nid'] ?>/edit?destination=<?php print $_GET['q'] ?>"
-              title="Bild bearbeiten"
+              href="<?php print $url ?>"
+              title="Auf Karte anzeigen"
               class="flag unflag-action flag-link-normal" rel="nofollow">
               <div class="icon">
                 <i class="material-icons">mode_edit</i>
               </div>
               <div class="icon-text">
-                <?php print t('Bearbeiten'); ?>
+                <?php print t('Auf Karte anzeigen'); ?>
               </div>
             </a>
-       <?php endif; ?>
 
-
-
-            <?php if ($myAccount == 1): ?>
-              <div class="overlay-link-spacer"></div>
-              <a
-                href="/node/<?php print $myvars['nid'] ?>/delete?destination=<?php print $_GET['q'] ?>"
-                title="Bild löschen" class="flag unflag-action flag-link-normal"
-                rel="nofollow">
-                <div class="icon">
-                  <i class="material-icons">delete_forever</i>
-                </div>
-                <div class="icon-text">
-                  <?php print t('Löschen'); ?>
-                </div>
-              </a>
-            <?php endif ?>
 
           </div>
         </div>

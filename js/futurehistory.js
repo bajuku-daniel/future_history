@@ -8,9 +8,7 @@
                 try {
                     history.pushState({}, '', window.location);
                     history.back();
-                } catch (err) {
-
-                }
+                } catch (err) {}
 
                 var referrer = document.referrer;
                 if ((referrer.indexOf("fh-entdecken-map") !== -1)) {
@@ -35,7 +33,6 @@
             }
         }
 
-
         initialize();
 
         // Style the gmap markers blue and violet
@@ -45,13 +42,13 @@
             new google.maps.Point(0, 0), //origin
             new google.maps.Point(12, 12) //anchor point
         );
+
         var fh_marker_violet = new google.maps.MarkerImage(
             '/sites/default/files/gmap-files/fh-poi-violet.png',
             new google.maps.Size(25, 25),
             new google.maps.Point(0, 0), //origin
             new google.maps.Point(12, 12) //anchor point
         );
-
 
         var tour_url = '/de/fh_view/list_tour_content';
         var pois_by_nid = [];
@@ -85,10 +82,8 @@
                     directionsDisplay.setOptions({suppressMarkers: true});
 
                     calculateAndDisplayRoute(directionsService, directionsDisplay, original_tourdata);
-
                 }
             });
-
         }
 
         function calculateAndDisplayRoute(directionsService, directionsDisplay, original_tourdata) {

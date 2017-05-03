@@ -47,7 +47,12 @@
   </div>
 </header>
 
-  <div class="main-container container fill">
+<!--  for login page-->
+<?php if ($user->uid === 0){ ?>
+  <div class="main-container container ">
+    <?php }else{ ?>
+  <div class="container-fluid fill">
+<?php } ?>
     <?php print $messages; ?>
     <?php if (!empty($page['help'])): ?>
       <?php print render($page['help']); ?>
