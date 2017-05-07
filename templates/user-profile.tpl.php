@@ -54,7 +54,6 @@ $R = 0;
     <div class="col-sm-12 blog-main">
       <h4>Profil</h4>
       <div class="blog-post profil">
-
         <div
           class="picture circular"><?php print $user_profile['user_picture']['#markup']; ?></div>
         <div class="name"><?php print render($user_name); ?>
@@ -96,7 +95,7 @@ $R = 0;
   </div>
 <?php endif ?>
 
-<?php if ((int) $user_last_views_total > 0): ?>
+<?php if ((int) $user_last_views_total >= 0): ?>
 
   <div class="container-fluid fill">
     <div class="row PROFILE_TPL_ansichten">

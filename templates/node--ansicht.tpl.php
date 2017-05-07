@@ -179,12 +179,12 @@
             <i class="material-icons">info</i><a href="#infos" class="ansicht-info-button"> Infos</a>
           </div>
           <div class="col-md-2 col-md-offset-1 ansicht-back-to-map">
-            <i class="material-icons">keyboard_arrow_left</i><a href="/fh-entdecken-map" class="ansicht-back-button"> Zur Karte</a>
+            <i class="material-icons">map</i><a href="/fh-entdecken-map" class="ansicht-back-button"> Zur Karte</a>
           </div>
           <div class="col-md-2 prevnext ansicht-info">
-            <a href="#prev" class="prev-button hidden"><i class="material-icons">keyboard_arrow_left</i> prev</a>
+            <a href="#prev" class="prev-button hidden"><i class="material-icons">chevron_left</i></a>
             <div class="count"></div>
-            <a href="#next" class="next-button hidden">next <i class="material-icons">keyboard_arrow_right</i></a>
+            <a href="#next" class="next-button hidden"><i class="material-icons">chevron_right</i></a>
           </div>
         </div>
       </div>

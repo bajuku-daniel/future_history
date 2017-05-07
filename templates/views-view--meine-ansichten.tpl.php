@@ -43,45 +43,66 @@ else {
 }
 $R = 0;
 ?>
-<div class="container container-ansichten">
-  <div class="row">
 
-    <h4> <?php print(t('Eigene Bilder')); ?>  </h4>
-    <?php if ($exposed): ?>
-      <div class="view-exposed">
-        <?php print $exposed; ?>
-
-      </div>
-    <?php endif; ?>
-    <div class="addAnsichtButtons">
-      <a
-        href="/de/fh-entdecken-map?y=51.31491849367987&x=9.460614849999956&z=6&k=&d=1644--2016&s=dist&a=<?php print $profileUrl ?>"
-        class="btn btn-primary btnNext">Auf Karte anzeigen</a>
-  <?php if($myAccount): ?>
-      <a
-        href="/de/user/meine_ansichten"
-        class="btn btn-primary btnNext">Bilder bearbeiten</a>
-  <?php endif; ?>
-    </div>
-    <?php if (isset($empty)): ?>
-      <div class="view-empty">
-        <?php print $empty; ?>
-      </div>
-    <?php endif; ?>
+<!---->
+<!---->
+<!--  </div>-->
+<!--</div>-->
 
 
-  </div>
-</div>
-
-<div class="container-fluid">
+<div class="container-fluid OUTER_VIEW">
   <div class="row-fluid">
+
     <div class="col-sm-12">
+
+
+
+
+
       <div class="<?php print $classes; ?>">
-        <?php if ($rows): ?>
+
+
+        <div class="container container-ansichten OUTER_VIEW">
+          <div class="row">
+            <?php if ($rows): ?>
+            <h4> <?php print(t('Bilder')); ?>  </h4>
+            <?php if ($exposed): ?>
+              <div class="view-exposed">
+                <?php
+                print $exposed;
+                ?>
+              </div>
+            <?php endif; ?>
+            <div class="addAnsichtButtons">
+              <?php if ($myAccount): ?>
+                <a
+                  href="/de/user/meine_ansichten"
+                  class="btn btn-primary btnNext">Bilder bearbeiten</a>
+              <?php endif; ?>
+              <a
+                href="/de/fh-entdecken-map?y=51.31491849367987&x=9.460614849999956&z=6&k=&d=1644--2016&s=dist&a=<?php print $profileUrl ?>"
+                class="btn btn-primary btnNext">Auf Karte anzeigen</a>
+            </div>
+          </div>
+        </div>
+
+
+
+          <?php if (isset($empty)): ?>
+            <div class="view-empty">
+              <?php print $empty; ?>
+            </div>
+          <?php endif; ?>
           <div class="view-content">
             <?php print $rows; ?>
           </div>
-
+        <div class="container container-ansichten OUTER_VIEW">
+          <div class="row">
+          <div class="pager wrapper">
+            <?php print $pager ?>
+          </div>
+          </div>
+          </div>
         <?php endif; ?>
 
       </div>
@@ -94,6 +115,3 @@ $R = 0;
 
 </div>
 
-<div class="pager wrapper">
-  <?php print $pager ?>
-</div>

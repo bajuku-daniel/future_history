@@ -28,11 +28,34 @@
  * @ingroup views_templates
  */
 ?>
-
+<?php
+global $user;
+$currentUser = $user->uid;
+//get profile url for that you can use $user_id as user id
+$profileUrl = arg(1);
+// compare usernames to determine whether the user is on their own profile.
+if ($currentUser == $profileUrl) {
+  //user is on their profile, display link
+  $myAccount = 1;
+}
+else {
+  $myAccount = 0;
+}
+$R = 0;
+?>
 <div class="container container-ansichten">
   <div class="row">
 
-    <h4> <?php print(t('MEINE TOUREN')); ?>  </h4>
+    <h4> <?php print(t('Touren')); ?>  </h4>
+    <div class="addAnsichtButtons">
+      <?php if($myAccount): ?>
+        <a
+          href="/de/user/touren"
+          class="btn btn-primary btnNext">Touren bearbeiten</a>
+      <?php endif; ?>
+
+
+    </div>
     <?php if (isset($empty)): ?>
       <div class="view-empty">
         <?php print $empty; ?>
