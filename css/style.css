@@ -1418,11 +1418,9 @@ USER PROFILE
 
 .count{
   padding: 0 10px 0 10px;
+  color: #ffffff;
 }
 .ansicht-info a.prev-button i{
   left: -10px;
 }
 
-.prevnext.ansicht-info{
-  float: right;
-}

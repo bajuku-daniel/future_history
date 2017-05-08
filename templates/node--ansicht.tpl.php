@@ -178,13 +178,13 @@
           <div class="col-md-1 ansicht-info">
             <i class="material-icons">info</i><a href="#infos" class="ansicht-info-button"> Infos</a>
           </div>
-          <div class="col-md-2 col-md-offset-1 ansicht-back-to-map">
+          <div class="col-md-2 ansicht-back-to-map">
             <i class="material-icons">map</i><a href="/fh-entdecken-map" class="ansicht-back-button"> Zur Karte</a>
           </div>
-          <div class="col-md-2 prevnext ansicht-info">
-            <a href="#prev" class="prev-button hidden"><i class="material-icons">chevron_left</i></a>
+          <div class="col-md-1 prevnext ansicht-info">
+            <a href="#prev" class="prev-button hidden" title="Sie können zur Navigation die Pfeiltasten Ihres Keyboards verwenden"><i class="material-icons">chevron_left</i></a>
             <div class="count"></div>
-            <a href="#next" class="next-button hidden"><i class="material-icons">chevron_right</i></a>
+            <a href="#next" class="next-button hidden"><i class="material-icons"  title="Sie können zur Navigation die Pfeiltasten Ihres Keyboards verwenden">chevron_right</i></a>
           </div>
         </div>
       </div>
