@@ -39,14 +39,13 @@ $currentUser = $user->uid;
 //get profile url for that you can use $user_id as user id
 $profileUrl = arg(1);
 // compare usernames to determine whether the user is on their own profile.
-if($currentUser == $profileUrl) {
+if ($currentUser == $profileUrl) {
   //user is on their profile, display link
   $myAccount = 1;
 }
 else {
   $myAccount = 0;
 }
-<<<<<<< HEAD
 $R = 0;
 ?>
 
@@ -123,16 +122,4 @@ $R = 0;
 <?php endif; ?>
 
 
-=======
-
-?>
-<h4>Benutzer Informationen</h4>
-<div class="profile"<?php print $attributes; ?>>
-  <?php print render($user_profile); ?>
-</div>
-
-<?php if ($myAccount): ?>
-  <a class="btn btn-default profile-edit-button" href="/user/<?php print($currentUser); ?>/edit">Profil Bearbeiten </a>
-<?php endif ?>
->>>>>>> master
 
