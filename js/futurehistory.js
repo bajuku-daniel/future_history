@@ -48,9 +48,18 @@
                 }
             }
 
+
+            // invalidation of current filter results for certain pages by css selectors
+            $(".front,.page-node-add,.page-user,.page-user-meine-ansichten,.page-user-sammlungen,.page-user-touren").each(function(){
+                cookie_data.lastResults = 'undefined';
+                delete cookie_data[lastResults]
+                $.cookie('fh_state_cookie', JSON.stringify(cookie_data), {path: '/'});
+            });
+
             var currentNid = window.location.href.split("/");
             currentNid = currentNid.slice(-1)[0];
             if (typeof cookie_data.lastResults !== 'undefined') {
+                // build data for sliding next/prev images based on last results
                 var currentIndex = cookie_data.lastResults.indexOf(currentNid);
                 var nextNid = nextItem(currentIndex, cookie_data.lastResults);
                 var prevNid = prevItem(currentIndex, cookie_data.lastResults);
