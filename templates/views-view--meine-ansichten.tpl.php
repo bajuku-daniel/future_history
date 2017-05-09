@@ -80,7 +80,7 @@ $R = 0;
                   class="btn btn-primary btnNext">Bilder bearbeiten</a>
               <?php endif; ?>
               <a
-                href="/de/fh-entdecken-map?y=51.31491849367987&x=9.460614849999956&z=6&k=&d=1644--2016&s=dist&a=<?php print $profileUrl ?>"
+                href="/de/fh-entdecken-map?y=51.31491849367987&x=9.460614849999956&z=6&k=&d=1644--2016&s=dist&a=<?php print $currentUser ?>"
                 class="btn btn-primary btnNext">Auf Karte anzeigen</a>
             </div>
           </div>

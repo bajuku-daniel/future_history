@@ -42,10 +42,13 @@
                 // update URL of "Zur Karte" button only if referrer is NOT map
                 var origin = document.referrer;
                 if ($('#ansicht_lat').val() && (origin.indexOf("fh-entdecken-map") === -1)) {
-                    var requestDate = "1644--2016";
+                    var requestDate = "all";
                     var zoom = "15";
                     var url_update = "/de/fh-entdecken-map?y=" + $('#ansicht_lat').val() + "&x=" + $('#ansicht_lng').val() + "&z=" + zoom + "&k=&d=" + requestDate + "&a=all&s=dist";
-                    $(".ansicht-back-button").attr("href", url_update);
+
+                    if(cookie_data.tourdisplay_is_Active !== true){
+                        $(".ansicht-back-button").attr("href", url_update);
+                    }
                 }
             }
 
@@ -58,9 +61,10 @@
                 });
             }
 
+
             var splitUrl = window.location.href.split("/");
             currentNid = splitUrl.slice(-1)[0];
-            console.log(splitUrl);
+
             if(currentNid.indexOf("#") !== -1){
                 currentNid = currentNid.substr(0,currentNid.indexOf("#"));
             }
@@ -78,11 +82,9 @@
                     $(document).keydown(function(e){
                         switch(e.which) {
                             case $.ui.keyCode.LEFT:
-                                console.log($.ui.keyCode.LEFT);
                                 $(".prev-button")[0].click();
                                 break;
                             case $.ui.keyCode.RIGHT:
-                                console.log($.ui.keyCode.RIGHT);
                                 $(".next-button")[0].click();
                                 break;
 
