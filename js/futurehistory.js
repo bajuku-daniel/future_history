@@ -45,10 +45,25 @@
                     var requestDate = "all";
                     var zoom = "15";
                     var url_update = "/de/fh-entdecken-map?y=" + $('#ansicht_lat').val() + "&x=" + $('#ansicht_lng').val() + "&z=" + zoom + "&k=&d=" + requestDate + "&a=all&s=dist";
+                    // 2erlei
+                    // aus gallerie zurück zur Karte sollte über Cookie befüllt werden
+                    // ist das nicht der fall gelten die URL params des aktuellen Bildes
+                    // verwende cookie_data.lastResults als check
+                    // annahme cookie ist leer wenn nicht !
 
-                    if(cookie_data.tourdisplay_is_Active !== true){
+                    if(typeof cookie_data.lastResults !== 'undefined'){
+                        cookie_data.initializeOnPageLoad = true;
+                        $.cookie('fh_state_cookie', JSON.stringify(cookie_data), {path: '/'});
+                        cookie_data = JSON.parse($.cookie("fh_state_cookie"));
+                        url_update = "/de/fh-entdecken-map";
+                        $(".ansicht-back-button").attr("href", url_update);
+
+                    }else{
                         $(".ansicht-back-button").attr("href", url_update);
                     }
+
+
+
                 }
             }
 
@@ -56,6 +71,7 @@
                 // invalidation of current filter results for certain pages by css selectors
                 $(".front,.page-node-add,.page-user,.page-user-meine-ansichten,.page-user-sammlungen,.page-user-touren").each(function () {
                     cookie_data.lastResults = 'undefined';
+                    cookie_data = [];
                     // delete cookie_data[lastResults];
                     $.cookie('fh_state_cookie', JSON.stringify(cookie_data), {path: '/'});
                 });
