@@ -35,8 +35,22 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
   <?php if ($header): ?>
+    <?php
+    $title_1 = $view->field['title_1']->original_value;
+    $period_start = $view->field['period_start']->original_value;
+    $period_end = $view->field['period_end']->original_value;
+    $tour_distance =$view->field['tour_distance']->original_value;
+    $edit_list = $view->field['edit_list']->original_value;
+    $description = $view->field['description']->original_value;
+    $fid = $view->field['fid']->original_value;
+    ?>
     <div class="view-header">
-      <?php print $header; ?>
+<!--      --><?php //print $header; ?>
+      <h4>Meine Tour: <?php print $title_1 ?> | <?php print $period_start ?> - <?php print $period_end ?> | <span id="tour_distance"><?php print $tour_distance ?></span> M</h4>
+      <a href="/de/user/touren">Meine Touren auflisten</a> | <?php print $edit_list ?>
+      <p><?php print $description ?></p>
+      <div class="hidden-fields" style="display:none"><input id="tour_id" value="<?php print $fid ?>" /></div>
+
     </div>
   <?php endif; ?>
 
