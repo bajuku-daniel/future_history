@@ -18,6 +18,10 @@
 
         function initialize() {
             cookie_data = JSON.parse($.cookie("fh_state_cookie"));
+            if(cookie_data === null){
+                cookie_data = [];
+            }
+
 
             if ($(".node-type-ansicht .ansicht-back-to-map").size() > 0) {
                 // clickhandler sets cookie to reinitialize previous map/filter settings
@@ -51,7 +55,7 @@
                     // verwende cookie_data.lastResults als check
                     // annahme cookie ist leer wenn nicht !
 
-                    if(typeof cookie_data.lastResults !== 'undefined'){
+                    if(("lastResults" !== cookie_data) && (typeof cookie_data.lastResults !== 'undefined')){
                         cookie_data.initializeOnPageLoad = true;
                         $.cookie('fh_state_cookie', JSON.stringify(cookie_data), {path: '/'});
                         cookie_data = JSON.parse($.cookie("fh_state_cookie"));
@@ -67,7 +71,7 @@
                 }
             }
 
-            if (typeof cookie_data.lastResults !== 'undefined') {
+            if (("lastResults" !== cookie_data) && (typeof cookie_data.lastResults !== 'undefined')) {
                 // invalidation of current filter results for certain pages by css selectors
                 $(".front,.page-node-add,.page-user,.page-user-meine-ansichten,.page-user-sammlungen,.page-user-touren").each(function () {
                     cookie_data.lastResults = 'undefined';
