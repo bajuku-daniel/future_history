@@ -46,8 +46,10 @@
     ?>
     <div class="view-header">
 <!--      --><?php //print $header; ?>
+
       <h4>Meine Tour: <?php print $title_1 ?> | <?php print $period_start ?> - <?php print $period_end ?> | <span id="tour_distance"><?php print $tour_distance ?></span> M</h4>
-      <a href="/de/user/touren">Meine Touren auflisten</a> | <?php print $edit_list ?>
+      <?php if(user_is_logged_in()): ?>  <a href="/de/user/touren">Meine Touren auflisten</a> | <?php print $edit_list ?>
+<?php endif; ?>
       <p><?php print $description ?></p>
       <div class="hidden-fields" style="display:none"><input id="tour_id" value="<?php print $fid ?>" /></div>
 
