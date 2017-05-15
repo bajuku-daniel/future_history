@@ -46,7 +46,7 @@
 
 
     $user_app_deeplink_access = (user_is_anonymous() || $user->uid !== $view->result[0]->flag_lists_flags_uid);
-    $user_app_deeplink_access = isset($view->result[0]->flag_lists_flags_android_purchase_id);
+    $user_app_deeplink_access = isset($view->result[0]->flag_lists_flags_android_purchase_id) && !empty($view->result[0]->flag_lists_flags_android_purchase_id);
 //    $view->result[0]->flag_lists_flags_android_purchase_id
     //markup for deeplinks
     $google_qr_deeplink_url = $view->result[0]->flag_lists_flags_tour_deeplink;
