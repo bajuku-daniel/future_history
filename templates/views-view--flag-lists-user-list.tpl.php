@@ -39,23 +39,102 @@
     $title_1 = $view->field['title_1']->original_value;
     $period_start = $view->field['period_start']->original_value;
     $period_end = $view->field['period_end']->original_value;
-    $tour_distance =$view->field['tour_distance']->original_value;
+    $tour_distance = $view->field['tour_distance']->original_value;
     $edit_list = $view->field['edit_list']->original_value;
     $description = $view->field['description']->original_value;
     $fid = $view->field['fid']->original_value;
-    ?>
-    <div class="view-header">
-<!--      --><?php //print $header; ?>
 
-      <h4>Meine Tour: <?php print $title_1 ?> | <?php print $period_start ?> - <?php print $period_end ?> | <span id="tour_distance"><?php print $tour_distance ?></span> M</h4>
-      <?php if(user_is_logged_in()): ?>  <a href="/de/user/touren">Meine Touren auflisten</a> | <?php print $edit_list ?>
-<?php endif; ?>
+
+    $user_app_deeplink_access = (user_is_anonymous() || $user->uid !== $view->result[0]->flag_lists_flags_uid);
+    $user_app_deeplink_access = isset($view->result[0]->flag_lists_flags_android_purchase_id);
+//    $view->result[0]->flag_lists_flags_android_purchase_id
+    //markup for deeplinks
+    $google_qr_deeplink_url = $view->result[0]->flag_lists_flags_tour_deeplink;
+    $google_qr_image_url = $view->result[0]->flag_lists_flags_tour_qrcode;
+
+    $google_qr_alt
+      = t('QR Code for @url', array(
+      '@url' => $google_qr_deeplink_url
+    ));
+
+    $google_qr_code_img = theme('image', array(
+      'path' => $google_qr_image_url,
+      'alt' => $google_qr_alt,
+      'attributes' => array('class' => 'googleQRcode'),
+    ));
+    $tour_deeplink_qr_code_image = $google_qr_code_img;
+    $tour_deeplink_qr_code_markup = '<div class="deeplink_wrapper">
+<p>Verwende auf deinem Smartphone oder Tablet einen QR-Code scanner oder die Future-History App um den Code zu scannen und die Tour zu laden.<br><br>
+
+Future-History App:<br>
+nach dem Öffnen der App in der Anmeldemaske “QR-Code scannen” auswählen.</p>
+</div>';
+    ?>
+
+    <div class="container">
+    <div class="view-header">
+      <!--      --><?php //print $header; ?>
+
+      <h4>Meine Tour: <?php print $title_1 ?> | <?php print $period_start ?>
+        - <?php print $period_end ?> | <span
+          id="tour_distance"><?php print $tour_distance ?></span> M</h4>
+
+      <?php if (user_is_logged_in()): ?>  <a href="/de/user/touren">Meine Touren
+        auflisten</a> | <?php print $edit_list ?>
+      <?php endif; ?>
+
+      <?php if (isset($user_app_deeplink_access) && $user_app_deeplink_access && $header): ?>
+        <i class="material-icons">library_add</i> <a data-toggle="modal"
+                                                     data-target="#add-to-modal"
+                                                     class="ansicht-collection-button-message">Diese
+          Tour in der App öffne</a>
+      <?php endif; ?>
+
       <p><?php print $description ?></p>
-      <div class="hidden-fields" style="display:none"><input id="tour_id" value="<?php print $fid ?>" /></div>
+      <div class="hidden-fields" style="display:none"><input id="tour_id"
+                                                             value="<?php print $fid ?>"/>
+      </div>
 
     </div>
+    </div>
   <?php endif; ?>
+  <?php if (isset($user_app_deeplink_access) && $user_app_deeplink_access && $header): ?>
+  <!-- Modal -->
+  <div class="modal fade" id="add-to-modal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close"
+                  data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Tour in APP öffnen</h4>
+        </div>
+        <div class="modal-body">
 
+
+          <div class="row">
+            <div class="col-md-12"><label>Direktlink zur Tour</label> <p>Direktlink zur Installation der APP und zum Öffnen der Tour: <br><b><?php print l($google_qr_deeplink_url, $google_qr_deeplink_url) ?> </b><br><br><br></p></div>
+          </div><div class="row">
+            <div
+              class="col-md-6"><?php print $tour_deeplink_qr_code_image; ?></div>
+            <div
+              class="col-md-6"><?php print $tour_deeplink_qr_code_markup ?></div>
+
+
+          </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Schließen
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal END -->
+  <?php endif; ?>
   <?php if ($exposed): ?>
     <div class="view-filters">
       <?php print $exposed; ?>
@@ -75,7 +154,7 @@
       </div>
       <div class="row">
         <h4> Übersichtskarte </h4>
-        <div style="width:100%;height:500px;" id="fh-touren-detail-map" ></div>
+        <div style="width:100%;height:500px;" id="fh-touren-detail-map"></div>
       </div>
 
     </div>
