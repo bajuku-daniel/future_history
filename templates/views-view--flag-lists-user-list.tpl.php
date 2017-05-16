@@ -45,8 +45,9 @@
     $fid = $view->field['fid']->original_value;
 
 
-    $user_app_deeplink_access = (user_is_anonymous() || $user->uid !== $view->result[0]->flag_lists_flags_uid);
-    $user_app_deeplink_access = isset($view->result[0]->flag_lists_flags_android_purchase_id) && !empty($view->result[0]->flag_lists_flags_android_purchase_id);
+
+    $user_app_deeplink_access = isset($view->result[0]->flag_lists_flags_android_purchase_id) && !empty($view->result[0]->flag_lists_flags_android_purchase_id) && ($user->uid !== $view->result[0]->flag_lists_flags_uid);
+    $user_app_deeplink_access = true;
 //    $view->result[0]->flag_lists_flags_android_purchase_id
     //markup for deeplinks
     $google_qr_deeplink_url = $view->result[0]->flag_lists_flags_tour_deeplink;
@@ -84,10 +85,27 @@ nach dem Öffnen der App in der Anmeldemaske “QR-Code scannen” auswählen.</
       <?php endif; ?>
 
       <?php if (isset($user_app_deeplink_access) && $user_app_deeplink_access && $header): ?>
-        <i class="material-icons">library_add</i> <a data-toggle="modal"
-                                                     data-target="#add-to-modal"
-                                                     class="ansicht-collection-button-message">Diese
-          Tour in der App öffne</a>
+
+        <?php
+    switch ($view->result[0]->flag_lists_flags_tour_type){
+        case 0:
+          $tour_typ_class = 'free';
+          break;
+        case 1:
+          $tour_typ_class = 'group';
+          break;
+        case 2:
+          $tour_typ_class = 'single';
+          break;
+        }
+
+        ?>
+        <a data-toggle="modal"
+           data-target="#add-to-modal"
+           class="ansicht-collection-button-message"><button class="btn btn-primary btnNext" type="submit" id="qr-code" ><span class="icon glyphicon <?php print $tour_typ_class ?>"></span> Diese
+          Tour in der App öffnen</button></a>
+
+
       <?php endif; ?>
 
       <p><?php print $description ?></p>
@@ -112,9 +130,10 @@ nach dem Öffnen der App in der Anmeldemaske “QR-Code scannen” auswählen.</
         <div class="modal-body">
 
 
+<!--          <div class="row">-->
+<!--            <div class="col-md-12"><label>Direktlink zur Tour</label> <p>Direktlink zur Installation der APP und zum Öffnen der Tour: <br><b>--><?php //print l($google_qr_deeplink_url, $google_qr_deeplink_url) ?><!-- </b><br><br><br></p></div>-->
+<!--          </div>-->
           <div class="row">
-            <div class="col-md-12"><label>Direktlink zur Tour</label> <p>Direktlink zur Installation der APP und zum Öffnen der Tour: <br><b><?php print l($google_qr_deeplink_url, $google_qr_deeplink_url) ?> </b><br><br><br></p></div>
-          </div><div class="row">
             <div
               class="col-md-6"><?php print $tour_deeplink_qr_code_image; ?></div>
             <div

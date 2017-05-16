@@ -1424,3 +1424,15 @@ USER PROFILE
   left: -10px;
 }
 
+#qr-code .group,
+#qr-code .single{
+  background-image: url('../img/icon-group-gefuehrte-tour.png');
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  margin-right: 10px;
+}
+
+#qr-code .single{
+  background-image: url('../img/icon-single-selfguided-tour.png');
+}
