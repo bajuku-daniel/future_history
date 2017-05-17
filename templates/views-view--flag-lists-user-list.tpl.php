@@ -46,7 +46,7 @@
 
 
 
-    $user_app_deeplink_access = isset($view->result[0]->flag_lists_flags_android_purchase_id) && !empty($view->result[0]->flag_lists_flags_android_purchase_id) && ($user->uid !== $view->result[0]->flag_lists_flags_uid);
+    $user_app_deeplink_access = isset($view->result[0]->flag_lists_flags_tour_qrcode) && !empty($view->result[0]->flag_lists_flags_tour_qrcode) && ($user->uid !== $view->result[0]->flag_lists_flags_uid) && ($view->result[0]->flag_lists_flags_tour_type === "1" || $view->result[0]->flag_lists_flags_tour_type === "2" );
 //    $user_app_deeplink_access = true;
 //    $view->result[0]->flag_lists_flags_android_purchase_id
     //markup for deeplinks
@@ -65,7 +65,7 @@
     ));
     $tour_deeplink_qr_code_image = $google_qr_code_img;
     $tour_deeplink_qr_code_markup = '<div class="deeplink_wrapper">
-<p>Verwende auf deinem Smartphone oder Tablet einen QR-Code scanner oder die Future-History App um den Code zu scannen und die Tour zu laden.<br><br>
+<p>Verwende auf Deinem Smartphone oder Tablet einen QR-Code Scanner oder die Future-History App, um den Code zu scannen und die Tour zu laden.<br><br>
 
 Future-History App:<br>
 nach dem Öffnen der App in der Anmeldemaske “QR-Code scannen” auswählen.</p>
