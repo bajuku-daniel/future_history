@@ -47,7 +47,7 @@
 
 
     $user_app_deeplink_access = isset($view->result[0]->flag_lists_flags_android_purchase_id) && !empty($view->result[0]->flag_lists_flags_android_purchase_id) && ($user->uid !== $view->result[0]->flag_lists_flags_uid);
-    $user_app_deeplink_access = true;
+//    $user_app_deeplink_access = true;
 //    $view->result[0]->flag_lists_flags_android_purchase_id
     //markup for deeplinks
     $google_qr_deeplink_url = $view->result[0]->flag_lists_flags_tour_deeplink;
@@ -172,7 +172,7 @@ nach dem Öffnen der App in der Anmeldemaske “QR-Code scannen” auswählen.</
         <?php print $rows; ?>
       </div>
       <div class="row">
-        <h4> Übersichtskarte </h4>
+        <div class="container"> <h4> Übersichtskarte </h4></div>
         <div style="width:100%;height:500px;" id="fh-touren-detail-map"></div>
       </div>
 
