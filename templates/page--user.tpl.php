@@ -47,8 +47,11 @@
   </div>
 </header>
 
+
+<?php
+$path_fragments = explode('/',$_GET['q']);
+if ($user->uid === 0 && $path_fragments[0] === 'user' && !is_numeric($path_fragments[1]) ){ ?>
 <!--  for login page-->
-<?php if ($user->uid === 0){ ?>
   <div class="main-container container ">
     <?php }else{ ?>
   <div class="container-fluid fill">
